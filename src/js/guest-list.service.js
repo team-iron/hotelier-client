@@ -6,26 +6,30 @@
 
   GuestListService.$inject = ['$http'];
 
-  function GuestListService() {
+  function GuestListService($http) {
 
     return {
       postGuest: postGuest
     };
 
-    function postGuest() {
+    function postGuest(fullname, email, phone) {
+      console.log('here');
       return $http({
         url: 'https://hotelier-api-iron.herokuapp.com/api/Guests',
         data: {
-          fullname:
-          email:
-          phone:
-        }
-        method: 'POST'
+          fullname: fullname,
+          email: email,
+          phone: phone
+        },
+        method: 'post'
+      })
+      .then(function ReturnData(response) {
+        console.log('passed');
+
       });
-    }
 
 
-
+    };
 
   };
 
