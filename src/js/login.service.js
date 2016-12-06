@@ -6,15 +6,15 @@
 
     LoginService.$inject = ['$http'];
 
-    function LoginService(){
+    function LoginService($http){
         return {
             login: login,
             createNewStaffLogin: createNewStaffLogin
         };
 
         function login(email, password) {
-            $http({
-                url : 'https://hotelier-api-iron.herokuapp.com/api/Staff/login',
+            return $http({
+                url : 'https://hotelier-api-iron.herokuapp.com/api/Staffs/login',
                 method: 'post',
                 data: {
                     'email': email,
@@ -26,14 +26,14 @@
             });
         }
 
-        function createNewStaffLogin() {
-            $http({
-                url : 'https://hotelier-api-iron.herokuapp.com/api/Staff',
+        function createNewStaffLogin(email, password, fullName) {
+            return $http({
+                url : 'https://hotelier-api-iron.herokuapp.com/api/Staffs',
                 method: 'post',
                 data: {
-                    'email': 'nick@hotelier.com',
-                    'password' : 'nick',
-                    'fullName' : 'Nick G'
+                    'email': email,
+                    'password' : password,
+                    'fullName' : fullName
                 },
                 headers: {
                     'Content-type': 'application/json'

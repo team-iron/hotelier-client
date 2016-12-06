@@ -11,18 +11,33 @@
      */
     function LoginController(LoginService) {
         var vm = this;
+        this.loggedinUser = null;
         this.user = {};
         this.loggedin = false;
-        this.login = function login() {
-            LoginService.staffLogin()
+        this.login = function login(user) {
+            console.log(user);
+            var email = user.email;
+            var password = user.password;
+            LoginService.login(email, password)
                 .then(function success(data) {
                     console.log(data);
-                    vm.login = data;
-                    console.log(vm.login);
+                    vm.loggedinUser = data;
+                    console.log(vm.loggedinUser);
+                })
+                .catch(function error(xhr) {
+                    console.log(xhr);
                 });
         };
 
-        LoginService.createNewStaffLogin();
+        this.createNewStaffLogin = function createNewStaffLogin() {
+            LoginService.createNewStaffLogin()
+            .then(function success(data) {
+                console.log(data);
+            })
+            .catch(function error(xhr) {
+                console.log(xhr);
+            });
+        };
     }
 
 
