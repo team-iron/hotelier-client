@@ -4,16 +4,16 @@
     angular.module('hotelier')
         .controller('LoginController', LoginController);
 
-        /**
-         * Conctructor function for hotelier staff login
-         */
-        function LoginController() {
-            this.user = {};
-            this.loggedin = false;
-            this.login = function login() {
+    LoginController.$inject = [ 'LoginService' ];
 
-            };
-        }
+    /**
+     * Conctructor function for hotelier staff login
+     */
+    function LoginController(LoginService) {
+        this.user = {};
+        this.loggedin = false;
+        this.login;
+    }
 
 
 }());

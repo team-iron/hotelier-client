@@ -6,19 +6,17 @@ module.exports = function(grunt) {
 
       clean: ['build/'],
 
-      jshint: {
-           options: {
-               jshintrc: '.jshintrc',
-               ignores: ['node_modules/**']
-           },
-           source: {
-               files: {
-                   src: ['src/js/**/*.js']
-               }
-           }
-       },
-
-
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc',
+                ignores: ['node_modules/**']
+            },
+            source: {
+                files: {
+                    src: [ 'src/js/**/*.js' ]
+                }
+            }
+        },
         copy: {
             html: {
                 files: [
@@ -31,8 +29,6 @@ module.exports = function(grunt) {
                     }
                 ]
             },
-
-
           vendorjs: {
             files: [
               {
@@ -68,7 +64,6 @@ module.exports = function(grunt) {
             files: ['src/js/**/*.js'],
             tasks: ['test', 'concat']
           }
-
         }
     });
 
