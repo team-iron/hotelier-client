@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 
         concat: {
           js: {
-            src: ['build/js/angular.js', 'src/js/hotelier.module.js', 'src/js/**/*.js'],
+            src: ['src/js/hotelier.module.js', 'src/js/**/*.js'],
             dest: 'build/js/app.js'
           }
         },
