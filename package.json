@@ -1,7 +1,7 @@
 {
   "name": "hotelier",
   "version": "1.0.0",
-  "description": "",
+  "description": "A custom hotel reservation system.",
   "engines": {
     "node": "6.2.1"
   },
@@ -16,9 +16,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.5.9",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-copy": "^1.0.0",
     "http-server": "^0.9.0"
+  },
+  "main": "gruntfile.js",
+  "devDependencies": {
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0"
   }
 }
