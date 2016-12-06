@@ -16,7 +16,6 @@
                 controller: 'RepoListController',
                 controllerAs: 'repoList'
             });
-
     }
 
 
