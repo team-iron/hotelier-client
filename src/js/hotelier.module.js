@@ -13,8 +13,8 @@
                 name: 'staff-login',
                 url: '/staff-login',
                 templateUrl: 'views/staff-login.template.html',
-                controller: 'RepoListController',
-                controllerAs: 'repoList'
+                // controller: 'LoginController',
+                // controllerAs: 'repoList'
             });
     }
 
