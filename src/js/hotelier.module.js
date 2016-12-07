@@ -11,6 +11,7 @@
       .state({
         name: 'home',
         url: '',
+        templateUrl:'views/home.template.html'
       });
   }
 
