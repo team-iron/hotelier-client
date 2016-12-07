@@ -25,6 +25,18 @@ module.exports = function(grunt) {
             cwd: 'src/',
             src: 'index.html',
             dest: 'build/'
+          },
+          {
+            expand: true,
+            cwd: 'src/',
+            src: 'images/**',
+            dest: 'build/'
+          },
+          {
+            expand: true,
+            cwd: 'src/',
+            src: 'views/**',
+            dest: 'build'
           }
         ]
       },
@@ -35,13 +47,13 @@ module.exports = function(grunt) {
             cwd: 'node_modules/angular/',
             src: ['angular.js'],
             dest: 'build/js/'
+          },
+          {
+            expand: true,
+            cwd: 'node_modules/angular-ui-router/release/',
+            src: ['angular-ui-router.js'],
+            dest: 'build/js/'
           }
-          // {
-          //   expand: true,
-          //   cwd: 'node_modules/angular-ui-router/release/',
-          //   src: ['angular-ui-router.js'],
-          //   dest: 'build.js'
-          // }
         ]
       }
     },
@@ -55,14 +67,14 @@ module.exports = function(grunt) {
 
     concat: {
       js: {
-        src: ['build/js/angular.js', 'src/js/hotelier.module.js', 'src/js/**/*.js'],
+        src: ['build/js/angular.js', 'build/js/angular-ui-router.js', 'src/js/hotelier.module.js', 'src/js/**/*.js'],
         dest: 'build/js/app.js'
       }
     },
 
     watch:{
       html:{
-        files:['src/index.html'],
+        files:['src/index.html','src/views/**'],
         tasks:['copy:html']
       },
       js: {
