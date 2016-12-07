@@ -8,3 +8,9 @@ build/
 node_modules/
 *.npm
 *.log*
+
+#Src directory
+.DS_Store
+
+#Root directory
+.DS_Store
