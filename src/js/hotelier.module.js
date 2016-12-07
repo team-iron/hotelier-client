@@ -20,7 +20,7 @@
             .state({
                 name: 'add-guest',
                 url: '/add-guest',
-                templateUrl: '../views/guest-form.template.html',
+                templateUrl: 'views/guest-form.template.html',
                 controller: 'GuestListController',
                 controllerAs: 'guestlist'
             });
