@@ -6,6 +6,11 @@
 
   GuestListService.$inject = ['$http'];
 
+  /**
+   * Service for Guest List Constructor Fn
+   * @param {Service} $http Ajax call injection
+   * @return {Object} of functions within the main Constructor
+   */
   function GuestListService($http) {
 
     return {
