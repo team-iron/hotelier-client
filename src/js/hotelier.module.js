@@ -1,4 +1,5 @@
 (function() {
+
     'use strict';
 
     angular.module('hotelier', [ 'ui.router' ])
@@ -17,13 +18,22 @@
                 controllerAs: 'login'
             })
             .state({
-                name: 'reservations',
-                url: '/reservations',
-                templateUrl: 'views/reservations.template.html',
-                controller: ''
-            });
-    }
 
+                name: 'add-guest',
+                url: '/add-guest',
+                templateUrl: 'views/guest-form.template.html',
+                controller: 'GuestListController',
+                controllerAs: 'guestlist'
+            })
+            .state({
+              name: 'reservations',
+              url: '/reservations',
+              templateUrl: 'views/reservations.template.html',
+              controller: ''
+            });
+
+
+    });
 
 
 }());
