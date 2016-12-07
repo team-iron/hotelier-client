@@ -6,12 +6,12 @@
 
   routerConfig.$inject = ['$stateProvider'];
 
-  function routerConfig() {
+  function routerConfig($stateProvider) {
 
     $stateProvider
       .state({
         name: 'AddGuest',
-        url: '/create-guest',
+        url: '/add-guest',
         templateUrl: '../views/guest-form.template.html',
         controller: 'GuestListController',
         controllerAs: 'guestlist'
