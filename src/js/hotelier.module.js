@@ -1,22 +1,29 @@
 (function() {
-  'use strict';
 
-  angular.module('hotelier', ['ui.router'])
-    .config(routerConfig);
+    'use strict';
 
-  routerConfig.$inject = ['$stateProvider'];
+    angular.module('hotelier', [ 'ui.router' ])
+        .config(viewConfig);
 
-  function routerConfig($stateProvider) {
+    viewConfig.$inject = [ '$stateProvider' ];
 
-    $stateProvider
-      .state({
-        name: 'AddGuest',
-        url: '/add-guest',
-        templateUrl: '../views/guest-form.template.html',
-        controller: 'GuestListController',
-        controllerAs: 'guestlist'
-      });
+    function viewConfig($stateProvider) {
 
-  }
+        $stateProvider
+            .state({
+                name: 'staff-login',
+                url: '/staff-login',
+                templateUrl: 'views/staff-login.template.html',
+                controller: 'LoginController',
+                controllerAs: 'login'
+            })
+            .state({
+                name: 'add-guest',
+                url: '/add-guest',
+                templateUrl: '../views/guest-form.template.html',
+                controller: 'GuestListController',
+                controllerAs: 'guestlist'
+            });
+    }
 
 }());

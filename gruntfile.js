@@ -6,18 +6,17 @@ module.exports = function(grunt) {
 
       clean: ['build/'],
 
-      jshint: {
-           options: {
-               jshintrc: '.jshintrc',
-               ignores: ['node_modules/**']
-           },
-           source: {
-               files: {
-                   src: ['src/js/**/*.js']
-               }
-           }
-       },
-
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc',
+                ignores: ['node_modules/**']
+            },
+            source: {
+                files: {
+                    src: [ 'src/js/**/*.js' ]
+                }
+            }
+        },
         copy: {
             html: {
                 files: [
@@ -26,11 +25,15 @@ module.exports = function(grunt) {
                       cwd: 'src/',
                       src: 'index.html',
                       dest: 'build/'
-                    }
+                  },
+                  {
+                      expand: true,
+                      cwd: 'src/',
+                      src: 'views/**',
+                      dest: 'build/'
+                  }
                 ]
             },
-
-
           vendorjs: {
             files: [
               {
@@ -38,15 +41,48 @@ module.exports = function(grunt) {
                 cwd: 'node_modules/angular/',
                 src: ['angular.js'],
                 dest: 'build/js/'
+            },
+               {
+                 expand: true,
+                 cwd: 'node_modules/angular-ui-router/release/',
+                 src: ['angular-ui-router.js'],
+                 dest: 'build/js/'
               }
-              // {
-              //   expand: true,
-              //   cwd: 'node_modules/angular-ui-router/release/',
-              //   src: ['angular-ui-router.js'],
-              //   dest: 'build.js'
-              // }
             ]
           }
+        },
+        karma: {
+            options: {
+                frameworks: ['mocha', 'chai'],
+                client: {
+                    mocha: {
+                        ui: 'bdd'
+                    }
+                },
+                browsers: [ 'PhantomJS' ],
+                singleRun: true,
+
+                preprocessors: {
+                    'src/js/**/*.js': [ 'coverage' ]
+                },
+                reporters: [ 'dots', 'coverage' ],
+                coverageReporter: {
+                    type: 'text-summary'
+                }
+            },
+            login: {
+                options: {
+                    files: [
+                        'node_modules/angular/angular.js',
+                        'node_modules/angular-ui-router/release/angular-ui-router.js',
+                        'node_modules/angular-mocks/angular-mocks.js',
+                        'src/js/hotelier.module.js',
+                        'src/js/login.controller.js',
+                        'src/js/login.service.js',
+                        'test/specs/login.controller.spec.js'
+                    ]
+                }
+            }
         },
 
         concat: {
@@ -58,25 +94,30 @@ module.exports = function(grunt) {
 
         watch: {
           html: {
-            files: ['src/index.html'],
+            files: ['src/index.html', 'src/views/**'],
             tasks: ['copy:html']
 
           },
           js : {
             files: ['src/js/**/*.js'],
             tasks: ['test', 'concat']
-          }
+          },
+          test: {
+                files: ['test/specs/**/*.js'],
+                tasks: ['test']
+            }
         }
-
     });
+
 
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-karma');
 
 
-    grunt.registerTask('test', ['jshint']);
+    grunt.registerTask('test', ['jshint', 'karma']);
     grunt.registerTask('default', [ 'clean', 'test', 'copy', 'concat' ]);
 };
