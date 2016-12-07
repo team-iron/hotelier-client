@@ -6,8 +6,25 @@ header {
 
   h1 {
     margin: 0;
+    padding-top: 15px;
   }
+
   h2 {
-    font-size: 0.8em;
+    font-size: 1em;
   }
+
+  ul {
+    list-style: none;
+    padding:0;
+  }
+
+  a {
+    color: white;
+  }
+
+  li {
+    padding-bottom: 10px;
+  }
+
+
 }
