@@ -4,9 +4,9 @@
   angular.module('hotelier', ['ui.router'])
     .config(viewConfig);
 
-  routerConfig.$inject = ['$stateProvider'];
+  viewConfig.$inject = ['$stateProvider'];
 
-  function routerConfig($stateProvider){
+  function viewConfig($stateProvider){
     $stateProvider
       .state({
         name: 'home',
