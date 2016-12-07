@@ -8,29 +8,41 @@
 
     /**
      * Conctructor function for hotelier staff login
+     * @return {void}
      */
     function LoginController(LoginService) {
+
         var vm = this;
-        this.loggedinUser = null;
         this.user = {};
-        this.loggedin = false;
+
+        /**
+         * login function used to collect form values and pass them to login service
+         * @param  {Object} user contains user values (email, username)
+         * @return {Object} sets this.login to resolved http data containing system user data
+         */
         this.login = function login(user) {
             console.log(user);
             var email = user.email;
             var password = user.password;
             LoginService.login(email, password)
                 .then(function success(data) {
-                    console.log(data);
-                    vm.loggedinUser = data;
-                    console.log(vm.loggedinUser);
+                    vm.user = {};
+                    return data;
                 })
                 .catch(function error(xhr) {
                     console.log(xhr);
                 });
         };
 
-        this.createNewStaffLogin = function createNewStaffLogin() {
-            LoginService.createNewStaffLogin()
+        /**
+         * creates new staff user in hotelier management system
+         * @param  {String} email email of staff user used for login
+         * @param  {String} password password of staff user used for login
+         * @param  {String} fullName name of new staff member
+         * @return {void}
+         */
+        this.createNewStaffLogin = function createNewStaffLogin(email, password, fullName) {
+            LoginService.createNewStaffLogin(email, password, fullName)
             .then(function success(data) {
                 console.log(data);
             })
