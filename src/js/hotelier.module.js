@@ -15,6 +15,12 @@
                 templateUrl: 'views/staff-login.template.html',
                 controller: 'LoginController',
                 controllerAs: 'login'
+            })
+            .state({
+                name: 'reservations',
+                url: '/reservations',
+                templateUrl: 'views/reservations.template.html',
+                controller: ''
             });
     }
 
