@@ -15,6 +15,13 @@
                 templateUrl: 'views/staff-login.template.html',
                 controller: 'LoginController',
                 controllerAs: 'login'
+            })
+            .state({
+                name: 'available-rooms',
+                url: '/available-rooms',
+                templateUrl: 'views/available-rooms.template.html',
+                controller: 'AvailableRoomsController',
+                controllerAs: 'availableRooms'
             });
     }
 
