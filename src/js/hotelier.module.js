@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('hotelier', ['ui.router'])
-    .config(routerConfig);
+    .config(viewConfig);
 
   routerConfig.$inject = ['$stateProvider'];
 
@@ -12,7 +12,14 @@
         name: 'home',
         url: '',
         templateUrl:'views/home.template.html'
-      });
-  }
+      })
 
+      .state({
+          name: 'staff-login',
+          url: '/staff-login',
+          templateUrl: 'views/staff-login.template.html',
+          controller: 'LoginController',
+          controllerAs: 'login'
+      });
+    }
 }());

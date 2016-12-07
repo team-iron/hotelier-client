@@ -13,7 +13,7 @@ module.exports = function(grunt) {
       },
       source: {
         files: {
-          src: ['src/js/**/*.js']
+          src: [ 'src/js/**/*.js' ]
         }
       }
     },
@@ -29,14 +29,8 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: 'src/',
-            src: 'images/**',
-            dest: 'build/'
-          },
-          {
-            expand: true,
-            cwd: 'src/',
             src: 'views/**',
-            dest: 'build'
+            dest: 'build/'
           }
         ]
       },
@@ -57,6 +51,39 @@ module.exports = function(grunt) {
         ]
       }
     },
+    karma: {
+      options: {
+        frameworks: ['mocha', 'chai'],
+        client: {
+          mocha: {
+            ui: 'bdd'
+          }
+        },
+        browsers: [ 'PhantomJS' ],
+        singleRun: true,
+
+        preprocessors: {
+          'src/js/**/*.js': [ 'coverage' ]
+        },
+        reporters: [ 'dots', 'coverage' ],
+        coverageReporter: {
+          type: 'text-summary'
+        }
+      },
+      login: {
+        options: {
+          files: [
+            'node_modules/angular/angular.js',
+            'node_modules/angular-ui-router/release/angular-ui-router.js',
+            'node_modules/angular-mocks/angular-mocks.js',
+            'src/js/hotelier.module.js',
+            'src/js/login.controller.js',
+            'src/js/login.service.js',
+            'test/specs/login.controller.spec.js'
+          ]
+        }
+      }
+    },
     sass: {
       allStyles: {
         files: {
@@ -64,23 +91,27 @@ module.exports = function(grunt) {
         }
       }
     },
-
     concat: {
       js: {
-        src: ['build/js/angular.js', 'build/js/angular-ui-router.js', 'src/js/hotelier.module.js', 'src/js/**/*.js'],
+        src: ['src/js/hotelier.module.js', 'src/js/**/*.js'],
         dest: 'build/js/app.js'
       }
     },
 
-    watch:{
-      html:{
-        files:['src/index.html','src/views/**'],
-        tasks:['copy:html']
+    watch: {
+      html: {
+        files: ['src/index.html', 'src/views/**'],
+        tasks: ['copy:html']
+
       },
-      js: {
+      js : {
         files: ['src/js/**/*.js'],
-        tasks: [ 'concat']
+        tasks: ['test', 'concat']
       },
+      test: {
+        files: ['test/specs/**/*.js'],
+        tasks: ['test']
+      }
       sass: {
         files: ['src/sass/*.scss'],
         tasks: ['sass']
@@ -90,9 +121,16 @@ module.exports = function(grunt) {
         tasks: ['copy:images']
       }
     }
-
-
   });
+
+
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-karma');
+  >>>>>>> master
 
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -101,6 +139,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
+  <<<<<<< HEAD
   grunt.registerTask('test', ['jshint']);
   grunt.registerTask('default', [ 'clean', 'test', 'copy', 'concat' ]);
+  =======
+  grunt.registerTask('test', ['jshint', 'karma']);
+  grunt.registerTask('default', [ 'clean', 'test', 'copy', 'concat' ]);
+  >>>>>>> master
 };
