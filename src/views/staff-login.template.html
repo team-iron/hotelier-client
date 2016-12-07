@@ -1,5 +1,5 @@
-<form name='loginForm' ng-submit='loginForm.$valid && !login.login(login.user)'>
-    <input type='text' placeholder='email' required ng-model='login.user.email'>
-    <input type='text' placeholder='password' required ng-model='login.user.password'>
+<form class='input-group' name='loginForm' ng-submit='loginForm.$valid && !login.login(login.user)'>
+    <input class='form-control' type='text' placeholder='email' required ng-model='login.user.email'>
+    <input class='form-control' type='text' placeholder='password' required ng-model='login.user.password'>
     <input type='submit' value='login'>
 </form>
