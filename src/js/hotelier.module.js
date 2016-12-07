@@ -18,12 +18,22 @@
                 controllerAs: 'login'
             })
             .state({
+
                 name: 'add-guest',
                 url: '/add-guest',
                 templateUrl: 'views/guest-form.template.html',
                 controller: 'GuestListController',
                 controllerAs: 'guestlist'
+            })
+            .state({
+              name: 'reservations',
+              url: '/reservations',
+              templateUrl: 'views/reservations.template.html',
+              controller: ''
             });
-    }
+
+
+    });
+
 
 }());
