@@ -33,7 +33,7 @@
                 },
                 method: 'post',
                 headers: {
-                    Authorization: guestId
+                    'Authorization': guestId
                 }
                 })
                 .then(function returnResponse(response) {
