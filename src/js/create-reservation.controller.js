@@ -6,6 +6,10 @@
 
     CreateReservationController.$inject = ['CreateReservationService'];
 
+    /**
+     * Create Reservation Constructor Function
+     * @param {Service} CreateReservationService Service injected from the CreateReservationService
+     */
     function CreateReservationController(CreateReservationService) {
         this.reservationDetails = {};
 
