@@ -11,12 +11,12 @@
 
         this.addReservation = function addReservation() {
             CreateReservationService.createReservation(
-                this.ReservationDetails.checkinDate,
-                this.ReservationDetails.checkoutDate,
-                this.ReservationDetails.numberOfGuests,
-                this.ReservationDetails.guestId,
-                this.ReservationDetails.roomId
-            );
+              this.reservationDetails.checkinDate,
+              this.reservationDetails.checkoutDate,
+              this.reservationDetails.numberOfGuests,
+              this.reservationDetails.guestId,
+              this.reservationDetails.roomId);
+
         };
     }
 }());
