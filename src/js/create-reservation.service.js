@@ -39,7 +39,8 @@
                 },
                 method: 'post',
                 headers: {
-                    'Authorization': guestId
+                    'Authorization': guestId,
+                    'Content-type': 'application/json'
                 }
                 })
                 .then(function returnResponse(response) {
