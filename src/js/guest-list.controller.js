@@ -18,6 +18,12 @@
 
        GuestListService.postGuest(this.inputValues.fullName, this.inputValues.email, this.inputValues.phone, this.inputValues.id);
 
+       this.allGuests = function allGuests(id) {
+         GuestListService.allGuests(id)
+         .then(function successHandler(data){
+           console.log(data);
+         });
+       };
      };
   }
 

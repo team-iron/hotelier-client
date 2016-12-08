@@ -1,0 +1,32 @@
+h1{
+  font-family: $themeFont;
+}
+.create-guest {
+  font-family: $themeFont;
+  margin-left: 10px;
+  aside{
+    width:300px;
+    margin-right: 0;
+  }
+  label{
+    font-weight: bold;
+  }
+  input {
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    margin-right: 0;
+    width: 300px;
+  }
+}
+
+/* media styles */
+
+/* tablet tyles */
+@media screen and (min-width: 629px){
+    .create-guest aside{
+      float:left;
+      width: 300px;
+      margin: 0 10px 0 0;
+    }
+}
