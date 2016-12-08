@@ -9,7 +9,7 @@
 
   /**
    * RoomService Constructor Function
-   * @param {$http} $http ajax call
+   * @param {Object} $http ajax call
    */
   function RoomService($http) {
     console.log($http);
