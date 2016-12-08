@@ -4,13 +4,16 @@
   angular.module('hotelier', ['ui.router'])
   .config(viewConfig);
 
-  viewConfig.$inject = ['$stateProvider'];
+  viewConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-  function viewConfig($stateProvider){
+  function viewConfig($stateProvider, $urlRouterProvider){
+
+    $urlRouterProvider.when('', '/');
+
     $stateProvider
     .state({
       name: 'home',
-      url: '',
+      url: '/',
       templateUrl:'views/home.template.html'
     })
     .state({
@@ -32,6 +35,13 @@
       url: '/reservations',
       templateUrl: 'views/reservations.template.html',
       controller: ''
+    })
+    .state({
+      name: 'all-guests',
+      url: '/Guests',
+      templateUrl: 'views/reservations.template.html',
+      controller: 'GuestListController',
+      controllerAs: 'guestlist'
     });
   }
 
