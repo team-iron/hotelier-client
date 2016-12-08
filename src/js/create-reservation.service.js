@@ -6,6 +6,12 @@
 
     CreateReservationService.$inject = ['$http'];
 
+    /**
+     * Services' Constructor Function
+     * @param {DependencyInjection} $http Injected as a dependency into the service to
+     * have successful ajax calls.
+     * @return {Promise} Returns an Ajax promise when completed.
+     */
     function CreateReservationService($http) {
 
         return {
