@@ -31,8 +31,7 @@
       name: 'reservations',
       url: '/reservations',
       templateUrl: 'views/reservations.template.html',
-      controller: 'ReservationsController',
-      controllerAs: 'reservations'
+      controller: ''
     });
   }
 
