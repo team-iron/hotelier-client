@@ -20,6 +20,9 @@
                 headers: {
                     'Authorization': token
                 }
+            })
+            .then(function success(response) {
+                return response.data;
             });
         }
     }
