@@ -12,7 +12,10 @@
      * @return {Object} functions used by LoginController
      */
     function LoginService($http){
+        var userToken;
+
         return {
+            userToken: userToken,
             login: login,
             createNewStaffLogin: createNewStaffLogin
         };
@@ -34,6 +37,10 @@
                 headers: {
                     'Content-type': 'application/json'
                 }
+            })
+            .then(function success(response) {
+                userToken = response.data.id;
+                console.log(userToken);
             });
         }
 

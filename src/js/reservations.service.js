@@ -6,8 +6,21 @@
 
     ReservationsService.$inject = [ '$http' ];
 
-    function ReservationsService() {
+    function ReservationsService($http) {
         console.log('hey');
+
+        return {
+            getReservations: getReservations
+        };
+
+        function getReservations(token) {
+            return $http({
+                url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations',
+                headers: {
+                    'Authorization' : token
+                }
+            });
+        }
     }
 
 }());
