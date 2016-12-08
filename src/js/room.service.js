@@ -14,17 +14,20 @@
   function RoomService($http) {
     console.log($http);
       return {
-        retrieveAllRooms: retrieveAllRooms
+        retrieveRooms: retrieveRooms
       };
 
       /**
        * Retrieves all the rooms available for guests to reserve
        * @return {Promise}  promise from $http request
        */
-      function retrieveAllRooms() {
+      function retrieveRooms() {
         return $http ({
           url: 'https://hotelier-api-iron.herokuapp.com/api/Rooms',
           method: 'GET'
+        })
+        .then(function handleSuccess(response) {
+          return response.data;
         });
       }
   }

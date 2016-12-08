@@ -19,9 +19,9 @@
             .state({
                 name: 'available-rooms',
                 url: '/available-rooms',
-                templateUrl: 'views/available-rooms.template.html',
-                controller: 'AvailableRoomsController',
-                controllerAs: 'availableRooms'
+                templateUrl: 'views/allRooms.template.html',
+                controller: 'AllRoomsController',
+                controllerAs: 'allRooms'
             });
     }
 
