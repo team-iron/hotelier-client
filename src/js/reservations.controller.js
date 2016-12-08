@@ -6,18 +6,18 @@
 
     ReservationsController.$inject = [ 'LoginService', 'ReservationsService' ];
 
-    function ReservationsController(ReservationsService, LoginService) {
+    function ReservationsController( LoginService, ReservationsService ) {
         console.log('hey');
 
         var vm = this;
-        this.userToken = LoginService.userToken;
-        this.reservations = [];
+        this.userToken = LoginService.loginToken;
+        this.reservations = null;
 
         this.getReservations = function getReservations(token) {
             ReservationsService.getReservations(token)
-                .then(function success(data) {
-                    console.log(data);
-                    vm.reservations = data;
+                .then(function success(response) {
+                    console.log('reserve', response.data);
+                    vm.reservations = response.data;
                 });
         };
     }

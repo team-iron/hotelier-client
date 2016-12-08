@@ -12,13 +12,18 @@
      * @return {Object} functions used by LoginController
      */
     function LoginService($http){
-        var userToken;
+        var token;
 
         return {
-            userToken: userToken,
             login: login,
+            loginToken: loginToken,
             createNewStaffLogin: createNewStaffLogin
         };
+
+        function loginToken() {
+            console.log(token);
+            return token;
+        }
 
         /**
          * Logs in staff in hotelier management system
@@ -39,8 +44,10 @@
                 }
             })
             .then(function success(response) {
-                userToken = response.data.id;
-                console.log(userToken);
+                token = response.data.id;
+                console.log(token);
+                return response.data;
+
             });
         }
 
