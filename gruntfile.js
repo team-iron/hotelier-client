@@ -162,7 +162,7 @@ module.exports = function(grunt) {
         tasks: ['test']
       },
       sass: {
-        files: ['src/sass/*.scss'],
+        files: ['src/sass/**/*.scss'],
         tasks: ['sass']
       },
       images: {

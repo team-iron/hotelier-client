@@ -24,9 +24,13 @@
       function retrieveRooms() {
         return $http ({
           url: 'https://hotelier-api-iron.herokuapp.com/api/Rooms',
-          method: 'GET'
+          method: 'GET',
+          params: {
+              filter: {"order": "number ASC"}
+          }
         })
-        .then(function handleSuccess(response) {
+        .then(function transformRoomResponse(response) {
+          console.log('retreived room data, transforming...', response);
           return response.data;
         });
       }

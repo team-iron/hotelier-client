@@ -1,9 +1,12 @@
 .room-list {
   list-style: none;
-  border: 1px solid black;
+  width: 200px;
+  margin: 0;
+
 }
 
-// .border-roomList {
-//   border: 1px solid black;
-//   float: left;
-// }
+.border-roomList {
+  border: 1px solid black;
+  padding: 20px;
+
+}
