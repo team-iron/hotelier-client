@@ -14,7 +14,8 @@
   function GuestListService($http) {
 
     return {
-      postGuest: postGuest
+      postGuest: postGuest,
+      allGuests: allGuests
     };
 
 
@@ -44,8 +45,24 @@
         console.log('passed', response);
 
       });
-
-
+    }
+    /**
+     * [allGuests description]
+     * @param  {[type]} id [description]
+     * @return {Promise}    [description]
+     */
+    function allGuests(id){
+      return $http({
+        url: 'https://hotelier-api-iron.herokuapp.com/api/Guests',
+        method: 'get',
+        headers: {
+          'Authorization': id
+        }
+      })
+      .then(function returnGuests(response){
+        console.log('guests', response);
+        return response;
+      });
     }
 
   }
