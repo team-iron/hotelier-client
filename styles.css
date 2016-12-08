@@ -1,0 +1,14 @@
+header {
+  background-image: url("src/images/red-wall.jpg");
+  background-size: contain;
+  color: #ffffff;
+  font-family: 'Raleway', sans-serif; }
+  header h1 {
+    margin: 0; }
+  header h2 {
+    font-size: 0.9em; }
+
+body {
+  margin: 0 auto; }
+
+/*# sourceMappingURL=styles.css.map */

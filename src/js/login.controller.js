@@ -26,6 +26,7 @@
             var password = user.password;
             LoginService.login(email, password)
                 .then(function success(data) {
+                  console.log(data);
                     vm.user = {};
                     return data;
                 })

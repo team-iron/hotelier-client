@@ -1,0 +1,21 @@
+.doors {
+  width: 200px;
+}
+
+.about {
+  font-family: $themeFont;
+  font-weight: normal;
+}
+
+/* media styles*/
+
+/* tablet styles*/
+@media screen and (min-width: 601px){
+  main {
+    margin: 25px;
+
+    .doors{
+      width: 350px;
+    }
+}
+}
