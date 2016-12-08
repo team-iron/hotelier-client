@@ -4,17 +4,19 @@
     angular.module('hotelier')
         .factory('ReservationsService', ReservationsService);
 
-    ReservationsService.$inject = [ '$http' ];
+    ReservationsService.$inject = [ '$http', 'LoginService' ];
 
-    function ReservationsService($http) {
-        console.log('hey service');
+    function ReservationsService($http, LoginService) {
+        console.log('creating me');
+
+        var token = LoginService.loginYesNo();
+        console.log('reseServe', token);
 
         return {
             getReservations: getReservations
         };
 
-        function getReservations(token) {
-            console.log(token);
+        function getReservations() {
             return $http({
                 url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations',
                 headers: {
