@@ -46,7 +46,11 @@
 
       });
     }
-
+    /**
+     * [allGuests description]
+     * @param  {[type]} id [description]
+     * @return {Promise}    [description]
+     */
     function allGuests(id){
       return $http({
         url: 'https://hotelier-api-iron.herokuapp.com/api/Guests',
@@ -55,8 +59,9 @@
           'Authorization': id
         }
       })
-      .then(function returnGuests(data){
-        console.log('guests', data);
+      .then(function returnGuests(response){
+        console.log('guests', response);
+        return response;
       });
     }
 
