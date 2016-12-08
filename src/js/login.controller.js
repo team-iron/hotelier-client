@@ -12,7 +12,6 @@
      */
     function LoginController(LoginService) {
 
-        var vm = this;
         this.user = {};
 
         /**
@@ -26,9 +25,7 @@
             var password = user.password;
             LoginService.login(email, password)
                 .then(function success(data) {
-                  console.log(data);
-                    vm.user = {};
-                    return data;
+                    console.log(data);
                 })
                 .catch(function error(xhr) {
                     console.log(xhr);
