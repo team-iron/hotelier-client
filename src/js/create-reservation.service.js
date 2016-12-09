@@ -4,7 +4,7 @@
     angular.module('hotelier')
         .factory('CreateReservationService', CreateReservationService);
 
-    CreateReservationService.$inject = ['$http'];
+    CreateReservationService.$inject = ['$http', 'LoginService'];
 
     /**
      * Services' Constructor Function
@@ -12,7 +12,9 @@
      * have successful ajax calls.
      * @return {Promise} Returns an Ajax promise when completed.
      */
-    function CreateReservationService($http) {
+    function CreateReservationService($http, LoginService) {
+
+        var token = LoginService.loginYesNo;
 
         return {
             createReservation: createReservation
@@ -39,11 +41,14 @@
                 },
                 method: 'post',
                 headers: {
-                    'Authorization': guestId,
+                    'Authorization': token()
                 }
                 })
                 .then(function returnResponse(response) {
                     console.log(response);
+                })
+                .catch(function handleFailure(xhr) {
+                  console.log(xhr);
                 });
 
         }
