@@ -2,14 +2,18 @@
   'use strict';
 
   angular.module('hotelier', ['ui.router'])
-  .config(viewConfig);
+    .config(viewConfig);
 
   viewConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
+  /**
+   * Sets states for single page application views when routing
+   * @param  {Service} $stateProvider built in angular-ui-router service
+   * @return {void}
+   */
   function viewConfig($stateProvider, $urlRouterProvider){
 
-    $urlRouterProvider.when('', '/');
-
+      $urlRouterProvider.when('', '/');
     $stateProvider
     .state({
       name: 'home',
@@ -34,7 +38,8 @@
       name: 'reservations',
       url: '/reservations',
       templateUrl: 'views/reservations.template.html',
-      controller: ''
+      controller: 'ReservationsController',
+      controllerAs: 'reservations'
     })
     .state({
       name: 'all-guests',
@@ -43,7 +48,7 @@
       controller: 'GuestListController',
       controllerAs: 'guestlist'
     });
-  }
+}
 
 
 }());
