@@ -46,7 +46,7 @@
         name: 'reservations.reservation',
         url: '/:guestId',
         templateUrl: 'views/reservation.template.html',
-        controller: 'ReservationsController',
+        controller: 'GuestReservationController',
         controllerAs: 'guestReservation'
     })
     .state({

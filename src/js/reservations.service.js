@@ -11,7 +11,8 @@
         var token = LoginService.loginYesNo;
 
         return {
-            getReservations: getReservations
+            getReservations: getReservations,
+            getReservation: getReservation
         };
 
         /**
@@ -22,6 +23,18 @@
         function getReservations() {
             return $http({
                 url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations',
+                headers: {
+                    'Authorization': token()
+                }
+            })
+            .then(function success(response) {
+                return response.data;
+            });
+        }
+
+        function getReservation(id) {
+            return $http({
+                url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations/' + id,
                 headers: {
                     'Authorization': token()
                 }
