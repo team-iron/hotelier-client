@@ -7,24 +7,26 @@
     ReservationsService.$inject = [ '$http', 'LoginService' ];
 
     function ReservationsService($http, LoginService) {
-        console.log('creating me');
 
-        var token = LoginService.loginYesNo();
-        console.log('reseServe', token);
+        var token = LoginService.loginYesNo;
 
         return {
             getReservations: getReservations
         };
 
+        /**
+         * Send http request for hotelier reservations data and transforms
+         * data response to only include reservations array
+         * @return {Promise} Callback promises able to transform and mitigate http response
+         */
         function getReservations() {
             return $http({
                 url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations',
                 headers: {
-                    'Authorization': token
+                    'Authorization': token()
                 }
             })
             .then(function success(response) {
-                console.log(response);
                 return response.data;
             });
         }

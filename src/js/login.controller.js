@@ -27,7 +27,6 @@
             LoginService.login(email, password)
                 .then(function success(token) {
                     vm.userToken = token;
-                    console.log(token);
                 })
                 .catch(function error(xhr) {
                     console.log(xhr);

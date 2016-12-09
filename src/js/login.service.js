@@ -21,7 +21,7 @@
         };
 
         /**
-         * Provides token if user is logged in otherwise returns null
+         * Provides token if user is logged in, otherwise returns null
          * @return {String} session token for loggedin User
          */
         function loginYesNo() {

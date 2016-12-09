@@ -6,6 +6,11 @@
 
   viewConfig.$inject = ['$stateProvider'];
 
+  /**
+   * Sets states for single page application views when routing
+   * @param  {Service} $stateProvider built in angular-ui-router service
+   * @return {void}        
+   */
   function viewConfig($stateProvider){
     $stateProvider
     .state({

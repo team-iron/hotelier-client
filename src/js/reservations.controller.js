@@ -7,17 +7,21 @@
 
     ReservationsController.$inject = [ 'ReservationsService' ];
 
+    /**
+     * Constructor function for ReservationController managing reservation data
+     * @param {Service} ReservationsService custom built angular service (see reservations.service.js)
+     */
     function ReservationsController( ReservationsService ) {
 
-        console.log('resCONT');
-
         var vm = this;
-        this.reservations = JSON.parse(sessionStorage.getItem('reservations')) ||
+
+        this.reservations =
             ReservationsService.getReservations()
-                .then(function success(data) {
-                    sessionStorage.setItem('reservations', JSON.stringify(data));
-                    vm.reservations = data;
-                    console.log(vm.reservations);
+                .then(function success(reservations) {
+                    vm.reservations = reservations;
+                })
+                .catch(function error(xhr) {
+                    console.log(xhr);
                 });
     }
 
