@@ -16,8 +16,14 @@
      this.createGuest = function createGuest() {
        console.log('it worked');
 
-       GuestListService.postGuest(this.inputValues.fullName, this.inputValues.email, this.inputValues.phone, this.inputValues.id);
+       GuestListService.postGuest(this.inputValues.fullName, this.inputValues.email, this.inputValues.phone);
 
+       /**
+        * This function does a GET request to the $http request
+        * from the injected service(GuestListService)
+        * @param  {String} id The Id given to the user.
+        * @return {Promise}    returns $http promise
+        */
        this.allGuests = function allGuests(id) {
          GuestListService.allGuests(id)
          .then(function successHandler(data){
