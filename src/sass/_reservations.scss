@@ -1,0 +1,18 @@
+#reservations {
+    list-style: none;
+    li {
+        width: $liWdth;
+        max-width:$liMaxWdth;
+        min-width:$liMinWdth;
+    }
+    article {
+        border-top: none;
+    }
+    p {
+        margin-bottom: 0;
+        padding: $pPadding;
+        &:nth-child(3n) {
+            margin-bottom: $pSecondChildMrgBot;
+        }
+    }
+}

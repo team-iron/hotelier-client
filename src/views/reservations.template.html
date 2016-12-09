@@ -1,5 +1,5 @@
 
-<ul>
+<ul id='reservations'>
     <li ng-repeat='reservation in reservations.reservations'>
         <article class='panel panel-info'>
             <h4 class='panel-heading'>{{reservation.checkinDate | date: 'M/dd/yyyy'}} - Room #{{reservation.room.number}}</h4>
