@@ -1,0 +1,23 @@
+
+.room-list::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.room-items {
+  list-style: none;
+  border: 1px solid black;
+  width: 200px;
+  float: left;
+  padding: 5px;
+  margin: 5px;
+  &:hover {
+      background-color: #7e1e19;
+      color: #ffffff;
+  }
+}
+
+.border-roomList {
+  padding: 30px;
+  margin: 0;
+}
