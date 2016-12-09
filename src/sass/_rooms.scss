@@ -1,12 +1,18 @@
-.room-list {
+
+.room-list::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.room-items {
   list-style: none;
   width: 200px;
-  margin: 0;
-
+  float: left;
+  margin: 5px;
+  padding: 5px;
 }
 
 .border-roomList {
   border: 1px solid black;
-  padding: 20px;
-
+  padding: 30px;
 }
