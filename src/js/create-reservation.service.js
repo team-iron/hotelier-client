@@ -25,7 +25,7 @@
          * @param  {String} numberOfGuests Number of guests signed up for the reservation
          * @param  {String} guestId        The guest who is reserving a rooms' id.
          * @param  {String} roomId         The Id of the room being reserved
-         * @return {Promise}               [description]
+         * @return {Promise}
          */
         function createReservation(checkinDate, checkoutDate, numberOfGuests, guestId, roomId) {
             return $http({
@@ -40,7 +40,6 @@
                 method: 'post',
                 headers: {
                     'Authorization': guestId,
-                    'Content-type': 'application/json'
                 }
                 })
                 .then(function returnResponse(response) {
