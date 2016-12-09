@@ -6,13 +6,18 @@
 }
 .room-items {
   list-style: none;
+  border: 1px solid black;
   width: 200px;
   float: left;
-  margin: 5px;
   padding: 5px;
+  margin: 5px;
+  &:hover {
+      background-color: #7e1e19;
+      color: #ffffff;
+  }
 }
 
 .border-roomList {
-  border: 1px solid black;
   padding: 30px;
+  margin: 0;
 }
