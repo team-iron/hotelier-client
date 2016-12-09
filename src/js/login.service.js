@@ -12,16 +12,19 @@
      * @return {Object} functions used by LoginController
      */
     function LoginService($http){
-        var token = localStorage.getItem('userToken');
+        var token = localStorage.getItem('userToken') || null;
 
         return {
             login: login,
-            loginToken: loginToken,
+            loginYesNo: loginYesNo,
             createNewStaffLogin: createNewStaffLogin
         };
 
-        function loginToken() {
-            console.log(token);
+        /**
+         * Provides token if user is logged in, otherwise returns null
+         * @return {String} session token for loggedin User
+         */
+        function loginYesNo() {
             return token;
         }
 
@@ -46,8 +49,7 @@
             .then(function success(response) {
                 token = response.data.id;
                 localStorage.setItem('userToken', token);
-                console.log(token);
-                return response.data;
+                return token;
 
             });
         }

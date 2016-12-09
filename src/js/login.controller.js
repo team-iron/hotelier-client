@@ -12,7 +12,9 @@
      */
     function LoginController(LoginService) {
 
+        var vm = this;
         this.user = {};
+        this.userToken = null;
 
         /**
          * login function used to collect form values and pass them to login service
@@ -20,12 +22,11 @@
          * @return {Object} sets this.login to resolved http data containing system user data
          */
         this.login = function login(user) {
-            console.log(user);
             var email = user.email;
             var password = user.password;
             LoginService.login(email, password)
-                .then(function success(data) {
-                    console.log(data);
+                .then(function success(token) {
+                    vm.userToken = token;
                 })
                 .catch(function error(xhr) {
                     console.log(xhr);
