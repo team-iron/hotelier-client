@@ -3,7 +3,7 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    
+
     clean: ['build/'],
 
     jshint: {
@@ -162,7 +162,7 @@ module.exports = function(grunt) {
         tasks: ['test']
       },
       sass: {
-        files: ['src/sass/*.scss'],
+        files: ['src/sass/**/*.scss'],
         tasks: ['sass']
       },
       images: {
@@ -181,5 +181,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('default', [ 'clean', 'test', 'copy', 'concat' ]);
+  grunt.registerTask('default', [ 'clean', 'test', 'sass', 'copy', 'concat' ]);
 };
