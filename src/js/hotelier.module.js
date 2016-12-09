@@ -56,8 +56,6 @@
       controller: 'GuestListController',
       controllerAs: 'guestlist'
     });
-
-
 }
 
 
