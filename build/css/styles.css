@@ -46,6 +46,49 @@ main {
 @media screen and (min-width: 629px) {
   main .doors {
     width: 350px; } }
+h1 {
+  font-family: "Raleway", sans-serif; }
+
+.create-guest {
+  font-family: "Raleway", sans-serif;
+  margin-left: 10px; }
+  .create-guest aside {
+    width: 300px;
+    margin-right: 0; }
+  .create-guest label {
+    font-weight: bold; }
+  .create-guest input {
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    margin-right: 0;
+    width: 300px; }
+  .create-guest .submit-guest {
+    background-color: #71b9d4;
+    color: #ffffff;
+    padding: 10px 0 10px 0; }
+
+/* media styles */
+/* tablet tyles */
+@media screen and (min-width: 629px) {
+  .create-guest aside {
+    float: left;
+    width: 300px;
+    margin: 0 10px 0 0; } }
+#reservations {
+  list-style: none; }
+  #reservations li {
+    width: 25%;
+    max-width: 300px;
+    min-width: 175px; }
+  #reservations article {
+    border-top: none; }
+  #reservations p {
+    margin-bottom: 0;
+    padding: 5%; }
+    #reservations p:nth-child(3n) {
+      margin-bottom: 7%; }
+
 footer {
   padding-top: 15px;
   margin: 0;
