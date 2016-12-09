@@ -16,7 +16,7 @@
      this.createGuest = function createGuest() {
        console.log('it worked');
 
-       GuestListService.postGuest(this.inputValues.fullName, this.inputValues.email, this.inputValues.phone, this.inputValues.id);
+       GuestListService.postGuest(this.inputValues.fullName, this.inputValues.email, this.inputValues.phone);
 
        /**
         * This function does a GET request to the $http request
