@@ -1,9 +1,20 @@
 #reservations {
     list-style: none;
+
+    &::after{
+          content: '';
+          display: block;
+          height: 10px;
+          clear: both;
+
+    }
     li {
+        float: left;
         width: $liWdth;
         max-width:$liMaxWdth;
         min-width:$liMinWdth;
+        margin: 1%;
+        margin-left: 5%;
     }
     article {
         border-top: none;
@@ -16,7 +27,7 @@
         }
     }
     .delete-reserve {
-      padding-left: 81%;
+      padding-left: 80%;
 
     }
     .delete-reservation {
@@ -24,6 +35,5 @@
       background-color: #dd2c2c;
       border-color: #dd2c2c;
       color: #ffffff;
-      padding-bottom: 5%;
     }
 }
