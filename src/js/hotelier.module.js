@@ -13,7 +13,8 @@
    */
   function viewConfig($stateProvider, $urlRouterProvider){
 
-      $urlRouterProvider.when('', '/');
+     $urlRouterProvider.when('', '/');
+
     $stateProvider
     .state({
       name: 'home',
@@ -47,6 +48,7 @@
         templateUrl: 'views/allRooms.template.html',
         controller: 'AllRoomsController',
         controllerAs: 'allRooms'
+    })
     .state({
       name: 'all-guests',
       url: '/Guests',
@@ -54,7 +56,10 @@
       controller: 'GuestListController',
       controllerAs: 'guestlist'
     });
+
+
 }
+
 
 
 }());
