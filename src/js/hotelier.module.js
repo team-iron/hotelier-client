@@ -4,18 +4,20 @@
   angular.module('hotelier', ['ui.router'])
     .config(viewConfig);
 
-  viewConfig.$inject = ['$stateProvider'];
+  viewConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
   /**
    * Sets states for single page application views when routing
    * @param  {Service} $stateProvider built in angular-ui-router service
    * @return {void}
    */
-  function viewConfig($stateProvider){
+  function viewConfig($stateProvider, $urlRouterProvider){
+
+      $urlRouterProvider.when('', '/');
     $stateProvider
     .state({
       name: 'home',
-      url: '',
+      url: '/',
       templateUrl:'views/home.template.html'
     })
     .state({
@@ -38,8 +40,15 @@
       templateUrl: 'views/reservations.template.html',
       controller: 'ReservationsController',
       controllerAs: 'reservations'
+    })
+    .state({
+      name: 'all-guests',
+      url: '/Guests',
+      templateUrl: 'views/reservations.template.html',
+      controller: 'GuestListController',
+      controllerAs: 'guestlist'
     });
-  }
+}
 
 
 }());

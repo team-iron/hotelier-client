@@ -16,14 +16,16 @@
 
       <header>
         <h1>Hotelier</h1>
-        <h2>Easier reservations for tomorrow, today.</h2>
+        <p>Easier reservations for tomorrow, today.</p>
 
         <nav class='navbar navbar-inverse'>
           <ul>
             <li><a ui-sref='home'>home</a></li>
+            <li><a ui-sref='all-guests'>all guests</a></li>
+            <li><a ui-sref='add-guest'>create guest</a></li>
+            <li><a ui-sref='create-reservation'>create reservation</a></li>
+            <li><a ui-sref='rooms'>rooms</a></li>
             <li><a ui-sref='reservations'>reservations</a></li>
-            <p><a ui-sref='staff-login'>Login</a></p>
-            <p><a ui-sref='add-guest'>Add Guest</a></p>
           </ul>
         </nav>
       </header>
@@ -31,8 +33,8 @@
       <main ui-view>
       </main>
 
-      <footer class='navbar navbar-inverse'>
-        <p> &copy 2016 The Iron Yard Students<span class='glyphicon glyphicon-envelope'></span></p>
+      <footer>
+        <p> &copy; 2016 The Iron Yard Students<span class='glyphicon glyphicon-envelope'></span></p>
         <p class ='login'><a class='login' ui-sref='staff-login'>Login</a></p>
       </footer>
 

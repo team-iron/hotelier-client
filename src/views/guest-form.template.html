@@ -1,7 +1,21 @@
-<form ng-submit='guestlist.createGuest()'>
-    <input type='text' name='fullname' placeholder='Full Name' ng-model='guestlist.inputValues.fullName'>
-    <input type='text' name='email' placeholder='Email' ng-model='guestlist.inputValues.email'>
-    <input type='text' name='phone' placeholder='Phone' ng-model='guestlist.inputValues.phone'>
-    <input type='text' name='staff-id' placeholder='Staff ID' ng-model='guestlist.inputValues.id'>
-    <input type='submit' value='Add Guest'>
+<h1>Create Guest</h1>
+
+<form class='create-guest' name='create-guest' ng-submit='guestlist.createGuest()'>
+    <aside>
+      <label for 'fullname'>Full Name</label>
+      <input type='text' name='fullname' placeholder='Full Name' ng-model='guestlist.inputValues.fullName'>
+    </aside>
+    <aside>
+      <label for 'email'>Email</label>
+      <input type='text' name='email' placeholder='Email' ng-model='guestlist.inputValues.email'>
+    </aside>
+    <aside>
+      <label for 'phone'>Phone Number</label>
+      <input type='text' name='phone' placeholder='Phone' ng-model='guestlist.inputValues.phone'>
+    </aside>
+    <aside>
+      <label for 'staff-id'>Staff ID</label>
+      <input type='text' name='staff-id' placeholder='Staff ID' ng-model='guestlist.inputValues.id'>
+    </aside>
+    <input class='submit-guest' type='submit' value='Add Guest'>
 </form>
