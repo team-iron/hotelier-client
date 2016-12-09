@@ -47,7 +47,14 @@
       templateUrl: 'views/reservations.template.html',
       controller: 'GuestListController',
       controllerAs: 'guestlist'
-    });
+    })
+    .state({
+       name: 'create-reservation',
+       url: '/create-reservation',
+       templateUrl: 'views/create-reservation.template.html',
+       controller: 'CreateReservationController',
+       controllerAs: 'create-reservation'
+      });
 }
 
 
