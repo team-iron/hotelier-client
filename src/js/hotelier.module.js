@@ -13,7 +13,8 @@
    */
   function viewConfig($stateProvider, $urlRouterProvider){
 
-      $urlRouterProvider.when('', '/');
+     $urlRouterProvider.when('', '/');
+
     $stateProvider
     .state({
       name: 'home',
@@ -42,11 +43,19 @@
       controllerAs: 'reservations'
     })
     .state({
+        name: 'available-rooms',
+        url: '/available-rooms',
+        templateUrl: 'views/allRooms.template.html',
+        controller: 'AllRoomsController',
+        controllerAs: 'allRooms'
+    })
+    .state({
       name: 'all-guests',
       url: '/Guests',
       templateUrl: 'views/reservations.template.html',
       controller: 'GuestListController',
       controllerAs: 'guestlist'
+
     })
     .state({
        name: 'create-reservation',
@@ -55,7 +64,6 @@
        controller: 'CreateReservationController',
        controllerAs: 'createReservation'
       });
-}
 
-
+    }
 }());
