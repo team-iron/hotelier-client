@@ -43,11 +43,11 @@
       controllerAs: 'reservations'
     })
     .state({
-        name: 'available-rooms',
-        url: '/available-rooms',
-        templateUrl: 'views/allRooms.template.html',
-        controller: 'AllRoomsController',
-        controllerAs: 'allRooms'
+      name: 'available-rooms',
+      url: '/available-rooms',
+      templateUrl: 'views/allRooms.template.html',
+      controller: 'AllRoomsController',
+      controllerAs: 'allRooms'
     })
     .state({
       name: 'all-guests',
@@ -55,7 +55,6 @@
       templateUrl: 'views/reservations.template.html',
       controller: 'GuestListController',
       controllerAs: 'guestlist'
-
     })
     .state({
        name: 'create-reservation',
@@ -63,7 +62,8 @@
        templateUrl: 'views/create-reservation.template.html',
        controller: 'CreateReservationController',
        controllerAs: 'createReservation'
-      });
+    });
 
-    }
+  }
+  
 }());
