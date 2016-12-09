@@ -64,7 +64,8 @@ h1 {
     margin-right: 0;
     width: 300px; }
   .create-guest .submit-guest {
-    background-color: #71b9d4;
+    background-color: #69c3e5;
+    border-color: #69c3e5;
     color: #ffffff;
     padding: 10px 0 10px 0; }
 
@@ -145,7 +146,8 @@ h1 {
     margin-right: 0;
     width: 300px; }
   .create-guest .submit-guest {
-    background-color: #71b9d4;
+    background-color: #69c3e5;
+    border-color: #69c3e5;
     color: #ffffff;
     padding: 10px 0 10px 0; }
 
@@ -156,5 +158,36 @@ h1 {
     float: left;
     width: 300px;
     margin: 0 10px 0 0; } }
+.input-group {
+  margin-right: 25px;
+  margin-left: 25px;
+  font-family: "Raleway", sans-serif; }
+  .input-group aside {
+    width: 300px; }
+  .input-group .form-control {
+    margin-bottom: 15px;
+    border-radius: 4px; }
+  .input-group .submit-login {
+    border-radius: 4px;
+    background-color: #69c3e5;
+    border-color: #69c3e5;
+    color: #ffffff;
+    padding: 5px 10px 5px 10px; }
+
+/* Media Styles */
+/* tablet styles */
+@media screen and (min-width: 630px) {
+  .input-group {
+    margin-right: 200px;
+    margin-left: 200px; }
+    .input-group aside {
+      width: 450px; } }
+/* desktop styles */
+@media screen and (min-width: 899px) {
+  .input-group {
+    margin-right: 350px;
+    margin-left: 350px; }
+    .input-group aside {
+      width: 450px; } }
 
 /*# sourceMappingURL=styles.css.map */
