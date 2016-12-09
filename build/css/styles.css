@@ -189,5 +189,7 @@ h1 {
     margin-left: 350px; }
     .input-group aside {
       width: 450px; } }
+.guest-detail {
+  border: 1px solid black; }
 
 /*# sourceMappingURL=styles.css.map */
