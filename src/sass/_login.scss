@@ -1,4 +1,21 @@
 .input-group{
-  margin-right: 300px;
-  margin-left: 300px;
+  margin-right: 400px;
+  margin-left: 400px;
+
+  aside{
+    width: 450px;
+  }
+
+  .form-control{
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+
+  .submit-login {
+    border-radius: 4px;
+    background-color: #69c3e5;
+    border-color:#69c3e5;
+    color: #ffffff;
+    padding: 5px 10px 5px 10px;
+  }
 }
