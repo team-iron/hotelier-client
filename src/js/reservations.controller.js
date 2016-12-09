@@ -18,7 +18,9 @@
         this.reservations =
             ReservationsService.getReservations()
                 .then(function success(reservations) {
+                  console.log(reservations);
                     vm.reservations = reservations;
+                    return reservations;
                 })
                 .catch(function error(xhr) {
                     console.log(xhr);
