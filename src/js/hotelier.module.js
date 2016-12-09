@@ -53,7 +53,7 @@
        url: '/create-reservation',
        templateUrl: 'views/create-reservation.template.html',
        controller: 'CreateReservationController',
-       controllerAs: 'create-reservation'
+       controllerAs: 'createReservation'
       });
 }
 
