@@ -1,7 +1,7 @@
 footer {
   padding-top: 15px;
   margin: 0;
-  background-color: #222;
+  background-color: #bbb;
   position:fixed;
   bottom: 0;
   width: 100%;
@@ -9,10 +9,10 @@ footer {
   border-color: #080808;
   p {
     font-family: $themeFont;
-    color: #ffffff;
+    color: black;
   }
   .login{
-    color: #ffffff;
+    color: black;
   }
   .glyphicon-envelope{
     float: right;

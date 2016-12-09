@@ -1,0 +1,10 @@
+
+<ul id='reservations'>
+    <li ng-repeat='reservation in reservations.reservations'>
+        <article class='panel panel-info'>
+            <h4 class='panel-heading'>{{reservation.checkinDate | date: 'M/dd/yyyy'}} - Room #{{reservation.room.number}}</h4>
+            <p class='panel-body'>Guest: {{reservation.guest.fullName}} ({{reservation.numberOfGuests}} people)</p>
+            <p class='panel-body'>Check Out: {{reservation.checkoutDate | date: 'M/dd/yyyy'}}</p>
+        </article>
+    </li>
+</ul>
