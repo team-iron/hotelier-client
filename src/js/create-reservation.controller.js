@@ -9,6 +9,7 @@
     /**
      * Create Reservation Constructor Function
      * @param {Service} CreateReservationService Service injected from the CreateReservationService
+     * @return {void}
      */
     function CreateReservationController(CreateReservationService) {
         this.reservationDetails = {};
