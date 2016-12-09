@@ -55,7 +55,6 @@
       templateUrl: 'views/reservations.template.html',
       controller: 'GuestListController',
       controllerAs: 'guestlist'
-
     })
     .state({
        name: 'create-reservation',
@@ -64,6 +63,5 @@
        controller: 'CreateReservationController',
        controllerAs: 'createReservation'
       });
-
     }
 }());
