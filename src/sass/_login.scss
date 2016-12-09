@@ -1,0 +1,49 @@
+.input-group{
+  margin-right: 25px;
+  margin-left: 25px;
+  font-family: $themeFont;
+
+  aside{
+    width: 300px;
+  }
+
+  .form-control{
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+
+  .submit-login {
+    border-radius: 4px;
+    background-color: #69c3e5;
+    border-color:#69c3e5;
+    color: #ffffff;
+    padding: 5px 10px 5px 10px;
+  }
+}
+
+/* Media Styles */
+
+/* tablet styles */
+
+@media screen and (min-width: 630px) {
+  .input-group{
+    margin-right: 200px;
+    margin-left: 200px;
+
+    aside{
+      width: 450px;
+    }
+  }
+}
+
+/* desktop styles */
+@media screen and (min-width: 899px) {
+  .input-group{
+    margin-right: 350px;
+    margin-left: 350px;
+
+    aside{
+      width: 450px;
+    }
+  }
+}
