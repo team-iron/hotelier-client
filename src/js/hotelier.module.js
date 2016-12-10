@@ -43,18 +43,18 @@
       controllerAs: 'reservations'
     })
     .state({
-        name: 'reservations.reservation',
-        url: '/:guestId',
-        templateUrl: 'views/reservation.template.html',
-        controller: 'GuestReservationController',
-        controllerAs: 'guestReservation'
-    })
-    .state({
         name: 'available-rooms',
         url: '/available-rooms',
         templateUrl: 'views/allRooms.template.html',
         controller: 'AllRoomsController',
         controllerAs: 'allRooms'
+    })
+    .state({
+        name: 'reservation',
+        url: 'reservation/:guestId',
+        templateUrl: 'views/reservation.template.html',
+        controller: 'GuestReservationController',
+        controllerAs: 'reservation'
     })
     .state({
       name: 'all-guests',

@@ -14,7 +14,6 @@
      this.inputValues = {};
 
      this.createGuest = function createGuest() {
-       console.log('it worked');
 
        GuestListService.postGuest(this.inputValues.fullName, this.inputValues.email, this.inputValues.phone);
 

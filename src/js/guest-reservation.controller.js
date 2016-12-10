@@ -8,12 +8,13 @@
 
     function GuestReservationController($stateParams, ReservationsService) {
 
+        var vm = this;
         this.guestReservation = {};
+        console.log('ddssds');
 
-        this.getReservation =
             ReservationsService.getReservation($stateParams.guestId)
                 .then(function success(reservation) {
-                    return reservation;
+                    vm.guestReservation = reservation;
                 })
                 .catch(function error(xhr) {
                     console.log(xhr);

@@ -30,7 +30,7 @@
      * @return {Promise}         Promise that the ajax call will return when complete
      */
     function postGuest(fullName, email, phone) {
-      console.log('here');
+
       return $http({
         url: 'https://hotelier-api-iron.herokuapp.com/api/Guests',
         data: {
@@ -45,7 +45,6 @@
       })
       .then(function ReturnData(response) {
         console.log('passed', response);
-
       });
     }
     /**

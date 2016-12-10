@@ -12,7 +12,7 @@
    * @param {Object} $http ajax call
    */
   function RoomService($http) {
-    console.log($http);
+      
       return {
         retrieveRooms: retrieveRooms
       };
@@ -30,7 +30,6 @@
           }
         })
         .then(function transformRoomResponse(response) {
-          console.log('retreived room data, transforming...', response);
           return response.data;
         });
       }

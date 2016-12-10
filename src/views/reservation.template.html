@@ -1,17 +1,17 @@
-<h2>Reservation {{guestRes.guestID}}</h2>
+<h2>Reservation {{reservation.guestReservation.guestID}}</h2>
 
 <article>
-    <h4>hey{{guestReservation.fullName}}</h4>
-    <p>how{{guestReservation.email}}</p>
-    <p>are{{guestReservation.phone}}</p>
+    <h4>hey{{reservation.guestReservation.fullName}}</h4>
+    <p>how{{reservation.guestReservation.email}}</p>
+    <p>are{{reservation.guestReservation.phone}}</p>
 </article>
 
 <article>
-    <h4>you{{guestReservation.room}}</h4>
-    <p>doing{{guestReservation.occupancy}}</p>
+    <h4>you{{reservation.guestReservation.room}}</h4>
+    <p>doing{{reservation.guestReservation.occupancy}}</p>
 </article>
 
-<h5>Check In: {{guestReservation.checkinDate}}</h5>
-<h5>Check Out: {{guestReservation.checkoutDate}}</h5>
+<h5>Check In: {{reservation.guestReservation.checkinDate}}</h5>
+<h5>Check Out: {{reservation.guestReservation.checkoutDate}}</h5>
 
-<button placeholder='Delete'></button>
+<button value='Delete'></button>

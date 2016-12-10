@@ -13,6 +13,7 @@
         return {
             getReservations: getReservations,
             getReservation: getReservation
+
         };
 
         /**
