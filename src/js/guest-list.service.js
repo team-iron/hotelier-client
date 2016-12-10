@@ -53,6 +53,7 @@
      * @return {Promise}    [description]
      */
     function allGuests(id){
+      console.log('I am here');
       return $http({
         url: 'https://hotelier-api-iron.herokuapp.com/api/Guests',
         method: 'get',

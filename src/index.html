@@ -17,14 +17,14 @@
         <h1>Hotelier</h1>
         <p>Easier reservations for tomorrow, today.</p>
 
-        <nav class='navbar navbar-inverse'>
+        <nav ng-controller='NavController as nav' class='navbar navbar-inverse'>
           <ul>
             <li><a ui-sref='home'>home</a></li>
-            <li><a ui-sref='all-guests'>all guests</a></li>
-            <li><a ui-sref='add-guest'>create guest</a></li>
-            <li><a ui-sref='create-reservation'>create reservation</a></li>
+            <li ng-if='nav.isLoggedIn()'><a ui-sref='all-guests'>all guests</a></li>
+            <li ng-if='nav.isLoggedIn()'><a ui-sref='add-guest'>create guest</a></li>
+            <li ng-if='nav.isLoggedIn()'><a ui-sref='create-reservation'>create reservation</a></li>
             <li><a ui-sref='available-rooms'>rooms</a></li>
-            <li><a ui-sref='reservations'>reservations</a></li>
+            <li ng-if='nav.isLoggedIn()'><a ui-sref='reservations'>reservations</a></li>
           </ul>
         </nav>
       </header>
@@ -32,9 +32,10 @@
       <main ui-view>
       </main>
 
-      <footer>
+      <footer ng-controller='NavController as nav'>
         <p> &copy; 2016 The Iron Yard Students<span class='glyphicon glyphicon-envelope'></span></p>
-        <p class ='login'><a class='login' ui-sref='staff-login'>Login</a></p>
+        <p ng-if='!nav.isLoggedIn()' class ='login'><a ng-click= 'login.login()' class='login' ui-sref='staff-login'>Login</a></p>
+        <p ng-if='nav.isLoggedIn()' class ='logout'><a ng-click='nav.logout()' class='logout' ui-sref='home'>Logout</a></p>
       </footer>
 
       <script src='js/angular.js'></script>
