@@ -1,17 +1,21 @@
-<h2>Reservation {{reservation.guestReservation.guestID}}</h2>
+<section id='single-reservation'>
 
-<article>
-    <h4>hey{{reservation.guestReservation.fullName}}</h4>
-    <p>how{{reservation.guestReservation.email}}</p>
-    <p>are{{reservation.guestReservation.phone}}</p>
-</article>
 
-<article>
-    <h4>you{{reservation.guestReservation.room}}</h4>
-    <p>doing{{reservation.guestReservation.occupancy}}</p>
-</article>
+    <h2>Reservation #{{reservation.guestReservation.id}}</h2>
 
-<h5>Check In: {{reservation.guestReservation.checkinDate}}</h5>
-<h5>Check Out: {{reservation.guestReservation.checkoutDate}}</h5>
+    <article>
+        <h4>{{reservation.guestReservation.guest.fullName}}</h4>
+        <p>{{reservation.guestReservation.guest.email}}</p>
+        <p>{{reservation.guestReservation.guest.phone}}</p>
+    </article>
 
-<button value='Delete'></button>
+    <article>
+        <h4>Room #{{reservation.guestReservation.room.number}}</h4>
+        <p>Max Occupancy: {{reservation.guestReservation.room.maxOccupancy}}</p>
+    </article>
+
+    <h5>Check In: {{reservation.guestReservation.checkinDate | date: 'M/dd/yyyy'}}</h5>
+    <h5>Check Out: {{reservation.guestReservation.checkoutDate | date: 'M/dd/yyyy'}}</h5>
+
+    <input class='delete-reservation' type='submit' value='Delete'>
+</section>
