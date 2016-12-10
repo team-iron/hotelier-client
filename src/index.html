@@ -32,9 +32,9 @@
       <main ui-view>
       </main>
 
-      <footer>
+      <footer ng-controller='LoginController as login'>
         <p> &copy; 2016 The Iron Yard Students<span class='glyphicon glyphicon-envelope'></span></p>
-        <p class ='login'><a class='login' ui-sref='staff-login'>Login</a></p>
+        <p class ='login'><a ng-click= 'login.login() 'class='login' ui-sref='staff-login'>Login</a></p>
       </footer>
 
       <script src='js/angular.js'></script>
