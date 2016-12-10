@@ -11,8 +11,10 @@
         var token = LoginService.loginYesNo;
 
         return {
-            getReservations: getReservations
-            // deleteReservation: deleteReservation
+
+            getReservations: getReservations,
+            getReservation: getReservation
+
         };
 
         /**
@@ -32,6 +34,19 @@
             });
         }
 
+
+        function getReservation(id) {
+            return $http({
+                url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations/' + id,
+                headers: {
+                    'Authorization': token()
+                }
+            })
+            .then(function success(response) {
+                return response.data;
+            });
+        }
+
       // function deleteReservations() {
       //
       //
@@ -41,6 +56,7 @@
       //
       //     });
       // }
+
     }
 
 }());

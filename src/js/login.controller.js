@@ -27,14 +27,14 @@
             LoginService.login(email, password)
                 .then(function success(token) {
                     vm.userToken = token;
+                    $state.go('reservations');
                 })
                 .catch(function error(xhr) {
                     console.log(xhr);
                 });
-            $state.go('reservations');
         };
 
-        
+
 
 
         /**
