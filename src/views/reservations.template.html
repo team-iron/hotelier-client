@@ -5,6 +5,9 @@
             <h4 class='panel-heading'>{{reservation.checkinDate | date: 'M/dd/yyyy'}} - Room #{{reservation.room.number}}</h4>
             <p class='panel-body'>Guest: {{reservation.guest.fullName}} ({{reservation.numberOfGuests}} people)</p>
             <p class='panel-body'>Check Out: {{reservation.checkoutDate | date: 'M/dd/yyyy'}}</p>
+            <form class='delete-reserve'>
+              <input class='delete-reservation' type='submit' value='Delete'>
+            </form>
         </article>
     </li>
 </ul>
