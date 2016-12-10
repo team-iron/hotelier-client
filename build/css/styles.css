@@ -89,6 +89,14 @@ h1 {
     padding: 5%; }
     #reservations p:nth-child(3n) {
       margin-bottom: 7%; }
+  #reservations .delete-reserve {
+    padding-left: 81%; }
+  #reservations .delete-reservation {
+    border-radius: 10%;
+    background-color: #dd2c2c;
+    border-color: #dd2c2c;
+    color: #ffffff;
+    padding-bottom: 5%; }
 
 footer {
   padding-top: 15px;
@@ -107,6 +115,11 @@ footer {
   footer .glyphicon-envelope {
     float: right;
     padding-right: 20px; }
+
+.add-reservation {
+  text-align: center;
+  display: inline-block;
+  margin: 0%; }
 
 .room-list::after {
   content: '';
@@ -127,6 +140,9 @@ footer {
 .border-roomList {
   padding: 30px;
   margin: 0; }
+
+.occupancy {
+  text-align: center; }
 
 h1 {
   font-family: "Raleway", sans-serif; }
@@ -158,6 +174,17 @@ h1 {
     float: left;
     width: 300px;
     margin: 0 10px 0 0; } }
+.reser-container {
+  margin: 30px 200px; }
+
+.reservation-form {
+  width: 600px;
+  float: left; }
+
+.reserve-btn {
+  color: #ffffff;
+  background-color: #42a6f0; }
+
 .input-group {
   margin-right: 25px;
   margin-left: 25px;

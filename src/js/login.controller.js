@@ -31,6 +31,7 @@
                 .catch(function error(xhr) {
                     console.log(xhr);
                 });
+            $state.go('reservations');
         };
 
         

@@ -1,5 +1,5 @@
 (function() {
-  'use strict';
+    'use strict';
 
   angular.module('hotelier', ['ui.router'])
     .config(viewConfig);
@@ -43,11 +43,11 @@
       controllerAs: 'reservations'
     })
     .state({
-        name: 'available-rooms',
-        url: '/available-rooms',
-        templateUrl: 'views/allRooms.template.html',
-        controller: 'AllRoomsController',
-        controllerAs: 'allRooms'
+      name: 'available-rooms',
+      url: '/available-rooms',
+      templateUrl: 'views/allRooms.template.html',
+      controller: 'AllRoomsController',
+      controllerAs: 'allRooms'
     })
     .state({
       name: 'all-guests',
@@ -55,9 +55,14 @@
       templateUrl: 'views/all-guests.template.html',
       controller: 'GuestListController',
       controllerAs: 'guestlist'
+    })
+    .state({
+       name: 'create-reservation',
+       url: '/create-reservation',
+       templateUrl: 'views/create-reservation.template.html',
+       controller: 'CreateReservationController',
+       controllerAs: 'createReservation'
     });
 }
-
-
 
 }());

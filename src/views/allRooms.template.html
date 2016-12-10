@@ -1,6 +1,13 @@
+<form class='reser-container' method="get">
+    <aside>
+      <input class= 'reservation-form' type='number' name='reservation-id' placeholder='Reservation ID'>
+    </aside>
+    <input class='reserve-btn' type='submit' value='Find reservation'>
+</form>
 
 <ul class='room-list'>
     <li class='room-items' ng-repeat='room in allRooms.rooms'>
         <h3 class='border-roomList'>Room {{room.number}}</h3>
+        <p class='occupancy'> Max Occupancy: {{room.maxOccupancy}}<p>
     </li>
 </ul>

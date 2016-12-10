@@ -34,9 +34,8 @@
 
       <footer ng-controller='NavController as nav'>
         <p> &copy; 2016 The Iron Yard Students<span class='glyphicon glyphicon-envelope'></span></p>
-        <p ng-if='!nav.isLoggedIn()' class ='login'><a class='login' ui-sref='staff-login'>Login</a></p>
+        <p ng-if='!nav.isLoggedIn()' class ='login'><a ng-click= 'login.login()' class='login' ui-sref='staff-login'>Login</a></p>
         <p ng-if='nav.isLoggedIn()' class ='logout'><a ng-click='nav.logout()' class='logout' ui-sref='home'>Logout</a></p>
-
       </footer>
 
       <script src='js/angular.js'></script>

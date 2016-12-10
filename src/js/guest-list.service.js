@@ -4,14 +4,16 @@
   angular.module('hotelier')
     .factory('GuestListService', GuestListService);
 
-  GuestListService.$inject = ['$http'];
+  GuestListService.$inject = ['$http', 'LoginService'];
 
   /**
    * Service for Guest List Constructor Fn
    * @param {Service}  Ajax call injection
    * @return {Object} of functions within the main Constructor
    */
-  function GuestListService($http) {
+  function GuestListService($http, LoginService) {
+
+    var token = LoginService.loginYesNo;
 
     return {
       postGuest: postGuest,
@@ -27,7 +29,7 @@
      * @param  {string} id        Id given to a staff member once logged in in order to create a guest
      * @return {Promise}         Promise that the ajax call will return when complete
      */
-    function postGuest(fullName, email, phone, id) {
+    function postGuest(fullName, email, phone) {
       console.log('here');
       return $http({
         url: 'https://hotelier-api-iron.herokuapp.com/api/Guests',
@@ -38,11 +40,11 @@
         },
         method: 'post',
         headers: {
-          'Authorization': id
+          'Authorization': token()
         }
       })
-      .then(function ReturnData(data) {
-        console.log('passed', data);
+      .then(function ReturnData(response) {
+        console.log('passed', response);
 
       });
     }
