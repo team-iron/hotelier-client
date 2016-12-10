@@ -34,6 +34,9 @@
             $state.go('reservations');
         };
 
+        
+
+
         /**
          * creates new staff user in hotelier management system
          * @param  {String} email email of staff user used for login
