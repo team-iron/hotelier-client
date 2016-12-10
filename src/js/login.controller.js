@@ -4,13 +4,13 @@
     angular.module('hotelier')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = [ 'LoginService' ];
+    LoginController.$inject = [ '$state', 'LoginService' ];
 
     /**
      * Conctructor function for hotelier staff login
      * @return {void}
      */
-    function LoginController(LoginService) {
+    function LoginController($state, LoginService) {
 
         var vm = this;
         this.user = {};
@@ -32,6 +32,9 @@
                     console.log(xhr);
                 });
         };
+
+        
+
 
         /**
          * creates new staff user in hotelier management system

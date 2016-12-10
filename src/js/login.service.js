@@ -17,7 +17,9 @@
         return {
             login: login,
             loginYesNo: loginYesNo,
-            createNewStaffLogin: createNewStaffLogin
+            createNewStaffLogin: createNewStaffLogin,
+            logout: logout,
+            isLoggedIn: isLoggedIn
         };
 
         /**
@@ -27,6 +29,7 @@
         function loginYesNo() {
             return token;
         }
+
 
         /**
          * Logs in staff in hotelier management system
@@ -52,6 +55,15 @@
                 return token;
 
             });
+        }
+
+        function logout() {
+          token = null;
+          localStorage.removeItem('userToken');
+        }
+
+        function isLoggedIn(){
+          return !!token;
         }
 
         /**
