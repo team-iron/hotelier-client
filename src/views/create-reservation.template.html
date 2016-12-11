@@ -13,3 +13,5 @@
   <input type='text' id='room-id' placeholder='Room ID#' ng-model='createReservation.reservationDetails.roomId'>
   <input type='submit' value='Make Reservation'>
 </form>
+
+<p class='error' ng-if='createReservation.errorMessage'>{{createReservation.errorMessage.statusResponse}}</p>
