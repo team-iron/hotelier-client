@@ -1,11 +1,9 @@
-<form class='reser-container' name='guestRes' ng-submit='gustRes.$valid && allRooms.getReservation(allRooms.reservationID.id)'>
+<form class='reser-container' name='guestRes' ng-submit='allRooms.getReservation(allRooms.reservationID.id)'>
     <aside>
       <input required class='reservation-form' type='text' name='reservation-id' placeholder='Reservation ID' ng-model='allRooms.reservationID.id'>
     </aside>
     <input class='reserve-btn' type='submit' value='Find reservation'>
 </form>
-<p class='error' ng-if='allRooms.errorMessage'>{{allRooms.errorMessage.statusResponse}}</p>
-<p class='error' ng-if='allRooms.errorMessage'>{{allRooms.errorMessage.statusResponse}}</p>
 
 
 <ul class='room-list'>

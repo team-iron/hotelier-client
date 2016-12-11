@@ -15,6 +15,7 @@
     this.rooms = [];
 
     this.reservationID = {};
+    this.errorMessage = null;
 
       RoomService.retrieveRooms()
         .then(function handleSuccess(data) {

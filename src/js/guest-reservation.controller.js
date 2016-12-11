@@ -8,9 +8,12 @@
 
     function GuestReservationController($stateParams, ReservationsService) {
 
+        console.log('controller create');
+
         var vm = this;
         this.guestReservation = {};
         console.log('ddssds');
+        this.errorMessage = null;
 
             ReservationsService.getReservation($stateParams.guestId)
                 .then(function success(reservation) {
@@ -18,6 +21,7 @@
                 })
                 .catch(function error(xhr) {
                     console.log(xhr);
+                    vm.errorMessage = xhr.data.error.message;
                 });
     }
 }());
