@@ -49,7 +49,7 @@
     }
     /**
      * Ajax call to returns a list of all guests.
-     * @param  {String} id ID required to view list of all guests.
+     * @param  {String} id ID required by logged-in staff to view list of all guests.
      * @return {Promise}   Promise that the ajax call will return when complete.
      */
     function allGuests(id){
