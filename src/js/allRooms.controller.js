@@ -22,7 +22,7 @@
           vm.rooms = data;
         })
         .catch(function error(xhr) {
-          console.warn(xhr);
+          console.log(xhr);
         });
 
         this.getReservation = function getReservation(id) {
