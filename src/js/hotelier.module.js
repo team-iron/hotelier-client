@@ -50,9 +50,16 @@
       controllerAs: 'allRooms'
     })
     .state({
+        name: 'reservation',
+        url: 'reservation/:guestId',
+        templateUrl: 'views/reservation.template.html',
+        controller: 'GuestReservationController',
+        controllerAs: 'reservation'
+    })
+    .state({
       name: 'all-guests',
-      url: '/Guests',
-      templateUrl: 'views/reservations.template.html',
+      url: '/guests',
+      templateUrl: 'views/all-guests.template.html',
       controller: 'GuestListController',
       controllerAs: 'guestlist'
     })
@@ -63,7 +70,6 @@
        controller: 'CreateReservationController',
        controllerAs: 'createReservation'
     });
-
-  }
+}
 
 }());

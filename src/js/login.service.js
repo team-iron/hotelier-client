@@ -17,7 +17,9 @@
         return {
             login: login,
             loginYesNo: loginYesNo,
-            createNewStaffLogin: createNewStaffLogin
+            createNewStaffLogin: createNewStaffLogin,
+            logout: logout,
+            isLoggedIn: isLoggedIn
         };
 
         /**
@@ -27,6 +29,7 @@
         function loginYesNo() {
             return token;
         }
+
 
         /**
          * Logs in staff in hotelier management system
@@ -52,6 +55,22 @@
                 return token;
 
             });
+        }
+
+        /**
+         * Logs staff out and removes userToken from local storage
+         */
+        function logout() {
+          token = null;
+          localStorage.removeItem('userToken');
+        }
+
+        /**
+         * Function that determines login status of staff
+         * @return {Boolean} Returns true or false for staff login status
+         */
+        function isLoggedIn(){
+          return !!token;
         }
 
         /**

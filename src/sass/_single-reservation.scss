@@ -1,0 +1,33 @@
+#single-reservation {
+    font-family: $themeFont;
+    h2 {
+        margin-top: 0.5em;
+    }
+    article {
+        margin: 0 auto;
+        width: 150px;
+        text-align: center;
+        border: 1px solid #000000;
+        border-radius: 5%;
+        &:nth-child(2n-1) {
+            margin-top: 2%;
+        }
+        h4 {
+            font-size: 1.5em;
+        }
+        p {
+            margin-bottom: 0;
+            &:nth-child(odd){
+                margin-top: 0;
+            }
+        }
+    }
+    h5 {
+        text-align: center;
+    }
+    input {
+        display: block;
+        margin: 0 auto;
+        width: 75px;
+    }
+}

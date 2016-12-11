@@ -12,3 +12,5 @@
   </aside>
     <input class='submit-login' type='submit' value='Log In'>
 </form>
+
+<p class='error' ng-if='login.errorMessage'>{{login.errorMessage.statusResponse}}{{login.errorMessage.message}}</p>

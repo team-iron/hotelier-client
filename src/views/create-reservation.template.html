@@ -25,3 +25,5 @@
     <input type='submit' value='Make Reservation'>
   </aside>
 </form>
+
+<p class='error' ng-if='createReservation.errorMessage'>{{createReservation.errorMessage.statusResponse}}</p>
