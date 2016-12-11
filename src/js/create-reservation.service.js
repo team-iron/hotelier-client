@@ -45,10 +45,7 @@
                 }
                 })
                 .then(function returnResponse(response) {
-                    console.log(response);
-                })
-                .catch(function handleFailure(xhr) {
-                  console.log(xhr);
+                    return response.data;
                 });
 
         }

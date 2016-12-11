@@ -25,6 +25,9 @@
         function getReservations() {
             return $http({
                 url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations',
+                params: {
+                    filter: {"order": "number ASC"}
+                },
                 headers: {
                     'Authorization': token()
                 }
