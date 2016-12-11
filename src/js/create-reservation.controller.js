@@ -12,7 +12,9 @@
      * @return {void}
      */
     function CreateReservationController($state, CreateReservationService) {
+        var vm = this;
         this.reservationDetails = {};
+        this.errorMessage = {};
 
         this.addReservation = function addReservation() {
             CreateReservationService.createReservation(
@@ -28,6 +30,11 @@
               })
               .catch(function error(xhr) {
                   console.log(xhr);
+                  if (xhr.data.error.status > 400 && xhr.data.error.status < 501) {
+                      vm.errorMessage.statusResponse = 'Reservation information incorrect.  Roooms cannot be reserved when double booked, over max capacity, and or without guests.';
+                  } else {
+                      vm.errorMessage.statusResponse = 'Try again soon. Our system is down.';
+                  }
               });
         };
     }

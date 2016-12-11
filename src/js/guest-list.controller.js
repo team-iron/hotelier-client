@@ -11,7 +11,9 @@
    * @param {Service} GuestListService Controllers injected service
    */
   function GuestListController($state, GuestListService) {
+     var vm = this;
      this.inputValues = {};
+     this.errorMessage = {};
 
      this.createGuest = function createGuest() {
 
@@ -22,6 +24,11 @@
         })
         .catch(function error(xhr) {
             console.log(xhr);
+            if (xhr.data.error.status > 400 && xhr.data.error.status < 500) {
+                vm.errorMessage.statusResponse = 'Guest name is required.';
+            } else {
+                vm.errorMessage.statusResponse = 'Try again soon. Our system is down.';
+            }
         });
      };
        /**
