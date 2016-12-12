@@ -25,6 +25,19 @@
                 .catch(function error(xhr) {
                     console.log(xhr);
                 });
+
+       vm.deleteCurrentReservation = function deleteCurrentReservation() {
+
+          console.log('were in');
+          ReservationsService.deleteReservations()
+            .then(function successHandler(reservations) {
+              console.log(reservations);
+            })
+            .catch(function errorHandler(xhr) {
+              console.log(xhr);
+            });
+
+       };
     }
 
 }());
