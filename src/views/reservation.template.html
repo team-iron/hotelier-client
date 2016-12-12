@@ -1,7 +1,7 @@
 <section id='single-reservation'>
 
-
     <h2>Reservation #{{reservation.guestReservation.id}}</h2>
+    <p class='error' ng-if='reservation.errorMessage'>{{reservation.errorMessage}}</p>
 
     <article>
         <h4>{{reservation.guestReservation.guest.fullName}}</h4>
