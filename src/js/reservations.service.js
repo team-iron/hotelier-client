@@ -11,8 +11,11 @@
         var token = LoginService.loginYesNo;
 
         return {
-            getReservations: getReservations
-            // deleteReservation: deleteReservation
+
+            getReservations: getReservations,
+            getReservation: getReservation,
+            deleteReservations: deleteReservations
+
         };
 
         /**
@@ -23,6 +26,9 @@
         function getReservations() {
             return $http({
                 url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations',
+                params: {
+                    filter: {"order": "number ASC"}
+                },
                 headers: {
                     'Authorization': token()
                 }
@@ -32,15 +38,34 @@
             });
         }
 
-      // function deleteReservations() {
-      //
-      //
-      //     return $http({
-      //       url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations' + ,
-      //       method: 'delete'
-      //
-      //     });
-      // }
+
+        function getReservation(id) {
+            return $http({
+                url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations/' + id,
+                headers: {
+                    'Authorization': token()
+                }
+            })
+            .then(function success(response) {
+                return response.data;
+            });
+        }
+
+      function deleteReservations(reservationId) {
+        console.log('in the service');
+          return $http({
+              url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations' + '/' + reservationId,
+              method: 'delete',
+              headers: {
+                  'Authorization': token()
+              }
+            })
+            .then(function successHandler(reservations) {
+            console.log(reservations);
+          });
+        }
+
     }
+
 
 }());

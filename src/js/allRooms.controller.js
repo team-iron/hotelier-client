@@ -4,16 +4,18 @@
   angular.module('hotelier')
       .controller('AllRoomsController', AllRoomsController);
 
-  AllRoomsController.$inject = ['RoomService'];
+  AllRoomsController.$inject = [ '$state','ReservationsService', 'RoomService' ];
 
   /**
    * [AllRoomsController description]
    * @param {[type]} RoomService [description]
    */
-  function AllRoomsController (RoomService) {
+  function AllRoomsController ($state, ReservationsService, RoomService) {
     var vm = this;
     this.rooms = [];
 
+    this.reservationID = {};
+    this.errorMessage = null;
 
       RoomService.retrieveRooms()
         .then(function handleSuccess(data) {
@@ -21,12 +23,13 @@
           vm.rooms = data;
         })
         .catch(function error(xhr) {
-          console.warn(xhr);
+          console.log(xhr);
         });
 
-      // this.changeOrder = function changeOrder(sortOrder) {
-      //     this.orderBy = sortOrder;
-      // };
+        this.getReservation = function getReservation(id) {
+            $state.go('reservation', { guestId: id });
+        };
+
   }
 
 }());

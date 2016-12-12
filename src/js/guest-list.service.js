@@ -30,7 +30,7 @@
      * @return {Promise}         Promise that the ajax call will return when complete
      */
     function postGuest(fullName, email, phone) {
-      console.log('here');
+
       return $http({
         url: 'https://hotelier-api-iron.herokuapp.com/api/Guests',
         data: {
@@ -45,13 +45,13 @@
       })
       .then(function ReturnData(response) {
         console.log('passed', response);
-
+        return response.data;
       });
     }
     /**
-     * [allGuests description]
-     * @param  {[type]} id [description]
-     * @return {Promise}    [description]
+     * Ajax call to returns a list of all guests.
+     * @param  {String} id ID required by logged-in staff to view list of all guests.
+     * @return {Promise}   Promise that the ajax call will return when complete.
      */
     function allGuests(id){
       console.log('I am here');
@@ -65,6 +65,7 @@
       .then(function returnGuests(response){
         console.log('guests', response);
         return response;
+
       });
     }
 

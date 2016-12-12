@@ -18,13 +18,26 @@
         this.reservations =
             ReservationsService.getReservations()
                 .then(function success(reservations) {
-                  console.log(reservations);
+                    console.log(reservations);
                     vm.reservations = reservations;
                     return reservations;
                 })
                 .catch(function error(xhr) {
                     console.log(xhr);
                 });
+
+       vm.deleteCurrentReservation = function deleteCurrentReservation() {
+
+          console.log('in here');
+          ReservationsService.deleteReservations()
+            .then(function successHandler(reservations) {
+              console.log(reservations);
+            })
+            .catch(function errorHandler(xhr) {
+              console.log(xhr);
+            });
+
+       };
     }
 
 }());
