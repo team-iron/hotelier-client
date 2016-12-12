@@ -31,7 +31,6 @@
                     $state.go('reservations');
                 })
                 .catch(function error(xhr) {
-                    console.log(xhr);
                     vm.errorMessage.message = xhr.data.error.message;
                     if (xhr.data.error.status > 400 && xhr.data.error.status < 500) {
                         vm.errorMessage.statusResponse = 'User and or password incorrect: ';

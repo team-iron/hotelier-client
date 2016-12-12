@@ -44,7 +44,6 @@
         }
       })
       .then(function ReturnData(response) {
-        console.log('passed', response);
         return response.data;
       });
     }
@@ -63,7 +62,6 @@
         }
       })
       .then(function returnGuests(response){
-        console.log('guests', response);
         return response;
 
       });

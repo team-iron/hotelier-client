@@ -5,20 +5,19 @@
     angular.module('hotelier')
         .controller('ReservationsController', ReservationsController);
 
-    ReservationsController.$inject = [ 'ReservationsService' ];
+    ReservationsController.$inject = [ '$state', 'ReservationsService' ];
 
     /**
      * Constructor function for ReservationController managing reservation data
      * @param {Service} ReservationsService custom built angular service (see reservations.service.js)
      */
-    function ReservationsController( ReservationsService ) {
+    function ReservationsController( $state, ReservationsService ) {
 
         var vm = this;
 
         this.reservations =
             ReservationsService.getReservations()
                 .then(function success(reservations) {
-                    console.log(reservations);
                     vm.reservations = reservations;
                     return reservations;
                 })
@@ -26,17 +25,8 @@
                     console.log(xhr);
                 });
 
-       vm.deleteCurrentReservation = function deleteCurrentReservation() {
-
-          console.log('in here');
-          ReservationsService.deleteReservations()
-            .then(function successHandler(reservations) {
-              console.log(reservations);
-            })
-            .catch(function errorHandler(xhr) {
-              console.log(xhr);
-            });
-
+       vm.deleteCurrentReservation = function deleteCurrentReservation(reservationId) {
+           $state.go('delete', {reservationId: reservationId});
        };
     }
 

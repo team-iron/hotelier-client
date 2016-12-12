@@ -24,7 +24,6 @@
               this.reservationDetails.guestId,
               this.reservationDetails.roomId)
               .then(function succes(data) {
-                  console.log(data);
                   var urlPath = data.id;
                   $state.go('reservation', {guestId: urlPath});
               })

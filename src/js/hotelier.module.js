@@ -43,6 +43,13 @@
       controllerAs: 'reservations'
     })
     .state({
+        name: 'delete',
+        url: 'reservation-remove/:reservationId',
+        templateUrl: 'views/deletion.template.html',
+        controller: 'DeleteReservationController',
+        controllerAs: 'deletion'
+    })
+    .state({
       name: 'available-rooms',
       url: '/available-rooms',
       templateUrl: 'views/allRooms.template.html',
