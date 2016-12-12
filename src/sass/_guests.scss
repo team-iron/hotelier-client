@@ -18,5 +18,9 @@
       float: left;
       margin: 2%;
       width: 280px;
+      &:hover {
+          background-color: #7e1e19;
+          color: #ffffff;
+      }
     }
 }
