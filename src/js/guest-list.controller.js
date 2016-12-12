@@ -23,8 +23,8 @@
         * @param  {String} id The Id given to the user.
         * @return {Promise}    returns $http promise
         */
-       this.allGuests = function allGuests(id) {
-         GuestListService.allGuests(id)
+       this.allGuests = function allGuests() {
+         GuestListService.allGuests()
          .then(function successHandler(data){
            console.log(data);
          });

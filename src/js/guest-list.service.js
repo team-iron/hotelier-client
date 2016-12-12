@@ -52,13 +52,13 @@
      * @param  {String} id ID required by logged-in staff to view list of all guests.
      * @return {Promise}   Promise that the ajax call will return when complete.
      */
-    function allGuests(id){
+    function allGuests(){
       console.log('I am here');
       return $http({
         url: 'https://hotelier-api-iron.herokuapp.com/api/Guests',
         method: 'get',
         headers: {
-          'Authorization': id
+          'Authorization': token
         }
       })
       .then(function returnGuests(response){
