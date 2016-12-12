@@ -13,7 +13,8 @@
         return {
 
             getReservations: getReservations,
-            getReservation: getReservation
+            getReservation: getReservation,
+            deleteReservations: deleteReservations
 
         };
 
@@ -50,16 +51,21 @@
             });
         }
 
-      // function deleteReservations() {
-      //
-      //
-      //     return $http({
-      //       url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations' + ,
-      //       method: 'delete'
-      //
-      //     });
-      // }
+      function deleteReservations(reservationId) {
+        console.log('in the service');
+          return $http({
+              url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations' + '/' + reservationId,
+              method: 'delete',
+              headers: {
+                  'Authorization': token()
+              }
+            })
+            .then(function successHandler(reservations) {
+            console.log(reservations);
+          });
+        }
 
     }
+
 
 }());
