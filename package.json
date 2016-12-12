@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.5.9",
+    "angular": "^1.6.0",
     "angular-mox": "^0.7.1",
     "angular-ui-router": "^0.3.2",
     "chai": "^3.5.0",
@@ -39,5 +39,10 @@
     "mocha": "^3.2.0",
     "phantomjs-prebuilt": "^2.1.13",
     "sass": "^0.5.0"
-  }
+  },
+  "main": "gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
 }
