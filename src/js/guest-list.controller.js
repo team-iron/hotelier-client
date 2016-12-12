@@ -14,18 +14,18 @@
      var vm = this;
      this.inputValues = {};
      this.errorMessage = {};
+     this.guests = [];
 
      this.createGuest = function createGuest() {
 
        GuestListService.postGuest(this.inputValues.fullName, this.inputValues.email, this.inputValues.phone)
-        .then(function success(data) {
-            console.log(data);
+        .then(function success() {
             $state.go('create-reservation');
         })
         .catch(function error(xhr) {
             console.log(xhr);
             if (xhr.data.error.status > 400 && xhr.data.error.status < 500) {
-                vm.errorMessage.statusResponse = 'Guest name is required.';
+                vm.errorMessage.statusResponse = xhr.data.error.message;
             } else {
                 vm.errorMessage.statusResponse = 'Try again soon. Our system is down.';
             }
@@ -37,12 +37,12 @@
         * @param  {String} id The Id given to the user.
         * @return {Promise}    returns $http promise
         */
-       this.allGuests = function allGuests(id) {
-         GuestListService.allGuests(id)
+       this.allGuests =
+         GuestListService.allGuests()
          .then(function successHandler(data){
            console.log(data);
+           vm.guests = data;
          });
-       };
   }
 
 

@@ -19,7 +19,6 @@
 
       RoomService.retrieveRooms()
         .then(function handleSuccess(data) {
-          console.log('room data retrieved in ctrl', data);
           vm.rooms = data;
         })
         .catch(function error(xhr) {
