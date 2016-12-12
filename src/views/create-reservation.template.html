@@ -1,17 +1,29 @@
-<h2>Create New Reservation</h2>
+<h1 class='create-res'>Create New Reservation</h1>
 
 <form class='add-reservation' ng-submit='createReservation.addReservation()'>
-  <label for='check-in'>Check in</label>
-  <input type='date' id='check-in' ng-model='createReservation.reservationDetails.checkinDate'>
-  <label for='check-out'>Check Out</label>
-  <input type='date' id='check-out' ng-model='createReservation.reservationDetails.checkoutDate'>
-  <label for='guests'>Number of Guests</label>
-  <input type='number' min='0' ng-model='createReservation.reservationDetails.numberOfGuests'>
-  <label for='guest-id'>Guest</label>
-  <input type='text' id='guest-id' placeholder='Guest ID#' ng-model='createReservation.reservationDetails.guestId'>
-  <label for='room-id'>Room</label>
-  <input type='text' id='room-id' placeholder='Room ID#' ng-model='createReservation.reservationDetails.roomId'>
-  <input type='submit' value='Make Reservation'>
+  <aside>
+    <label for='check-in'>Check in</label>
+    <input type='date' id='check-in' ng-model='createReservation.reservationDetails.checkinDate'>
+  </aside>
+  <aside>
+    <label for='check-out'>Check Out</label>
+    <input type='date' id='check-out' ng-model='createReservation.reservationDetails.checkoutDate'>
+  </aside>
+  <aside>
+    <label for='guests'>Number of Guests</label>
+    <input type='number' min='0' ng-model='createReservation.reservationDetails.numberOfGuests'>
+  </aside>
+  <aside>
+    <label for='guest-id'>Guest</label>
+    <input type='text' id='guest-id' placeholder='Guest ID#' ng-model='createReservation.reservationDetails.guestId'>
+  </aside>
+  <aside>
+    <label for='room-id'>Room</label>
+    <input type='text' id='room-id' placeholder='Room ID#' ng-model='createReservation.reservationDetails.roomId'>
+  </aside>
+  <aside>
+    <input type='submit' value='Make Reservation' class='reservation-btn'>
+  </aside>
 </form>
 
 <p class='error' ng-if='createReservation.errorMessage'>{{createReservation.errorMessage.statusResponse}}</p>
