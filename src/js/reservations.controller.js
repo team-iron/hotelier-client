@@ -28,7 +28,7 @@
 
        vm.deleteCurrentReservation = function deleteCurrentReservation() {
 
-          console.log('were in');
+          console.log('in here');
           ReservationsService.deleteReservations()
             .then(function successHandler(reservations) {
               console.log(reservations);
