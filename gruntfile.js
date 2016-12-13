@@ -68,39 +68,39 @@ module.exports = function(grunt) {
         ]
       }
     },
-    // karma: {
-    //   options: {
-    //     frameworks: ['mocha', 'chai'],
-    //     client: {
-    //       mocha: {
-    //         ui: 'bdd'
-    //       }
-    //     },
-    //     browsers: [ 'PhantomJS' ],
-    //     singleRun: true,
-    //
-    //     preprocessors: {
-    //       'src/js/**/*.js': [ 'coverage' ]
-    //     },
-    //     reporters: [ 'dots', 'coverage' ],
-    //     coverageReporter: {
-    //       type: 'text-summary'
-    //     }
-    //   },
-    //   login: {
-    //     options: {
-    //       files: [
-    //         'node_modules/angular/angular.js',
-    //         'node_modules/angular-ui-router/release/angular-ui-router.js',
-    //         'node_modules/angular-mocks/angular-mocks.js',
-    //         'src/js/hotelier.module.js',
-    //         'src/js/login.controller.js',
-    //         'src/js/login.service.js',
-    //         'test/specs/login.controller.spec.js'
-    //       ]
-    //     }
-    //   }
-    // },
+    karma: {
+      options: {
+        frameworks: ['mocha', 'chai'],
+        client: {
+          mocha: {
+            ui: 'bdd'
+          }
+        },
+        browsers: [ 'PhantomJS' ],
+        singleRun: true,
+
+        preprocessors: {
+          'src/js/**/*.js': [ 'coverage' ]
+        },
+        reporters: [ 'dots', 'coverage' ],
+        coverageReporter: {
+          type: 'text-summary'
+        }
+      },
+      login: {
+        options: {
+          files: [
+            'node_modules/angular/angular.js',
+            'node_modules/angular-ui-router/release/angular-ui-router.js',
+            'node_modules/angular-mocks/angular-mocks.js',
+            'src/js/hotelier.module.js',
+            'src/js/login.controller.js',
+            'src/js/login.service.js',
+            'test/specs/login.controller.spec.js'
+          ]
+        }
+      }
+    },
     sass: {
       allStyles: {
         files: {
