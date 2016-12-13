@@ -12,7 +12,6 @@
    * @param {Object} $http ajax call
    */
   function RoomService($http) {
-      
       return {
         retrieveRooms: retrieveRooms
       };
