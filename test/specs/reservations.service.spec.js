@@ -34,6 +34,24 @@
                 checkoutDate: '12-15-16'
             }]);
 
+            $httpBackend.whenGET('https://hotelier-api-iron.herokuapp.com/api/Reservations/12345')
+            .respond([{
+                id: 12345,
+                guest: {id:12345, name: 'nick', email:'nick@nick.com' },
+                room: { maxOccupancy: 3, id: 12345, rate: '$35' },
+                checkinDate: '12-12-16',
+                checkoutDate: '12-13-16'
+            }]);
+
+            $httpBackend.whenDELETE('https://hotelier-api-iron.herokuapp.com/api/Reservations/12345')
+            .respond([{
+                id: 12345,
+                guest: {id:12345, name: 'nick', email:'nick@nick.com' },
+                room: { maxOccupancy: 3, id: 12345, rate: '$35' },
+                checkinDate: '12-12-16',
+                checkoutDate: '12-13-16'
+            }]);
+
             $httpBackend.whenGET('views/home.template.html')
             .respond('Got reservations view');
 
@@ -53,6 +71,44 @@
                 .then(function(data) {
                     expect(data).to.be.an('array');
                     expect(data.length).to.equal(2);
+                    dc();
+                })
+                .catch(function(err) {
+                    console.log(err);
+                    dc('failed');
+                });
+
+            $httpBackend.flush();
+        });
+
+        it('should get reservation from API', function(dc) {
+            var result = ReservationsService.getReservation(12345);
+            expect(result).to.be.an('object');
+            expect(result.then).to.be.a('function');
+
+            result
+                .then(function(data) {
+                    expect(data).to.be.an('array');
+                    expect(data.length).to.equal(1);
+                    dc();
+                })
+                .catch(function(err) {
+                    console.log(err);
+                    dc('failed');
+                });
+
+            $httpBackend.flush();
+        });
+
+        it('should delete reservation from API', function(dc) {
+            var result = ReservationsService.getReservation(12345);
+            expect(result).to.be.an('object');
+            expect(result.then).to.be.a('function');
+
+            result
+                .then(function(data) {
+                    expect(data).to.be.an('array');
+                    expect(data.length).to.equal(1);
                     dc();
                 })
                 .catch(function(err) {

@@ -26,12 +26,12 @@
         }));
 
 
-        it('should login a user', function(dc) {
+        xit('should login a user', function(dc) {
             var result = LoginService.login('nick', 'nick');
             expect(result).to.be.an('object');
             expect(result.then).to.be.a('function');
             expect(result.catch).to.be.a('function');
-            console.log(result.$$state.status);
+
 
             result
                 .then(function(data) {
