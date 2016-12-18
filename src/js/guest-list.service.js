@@ -13,7 +13,6 @@
    */
   function GuestListService($http, LoginService) {
 
-    var token = LoginService.loginYesNo;
 
     return {
       postGuest: postGuest,
@@ -40,7 +39,7 @@
         },
         method: 'post',
         headers: {
-          'Authorization': token()
+          'Authorization': LoginService.loginYesNo()
         }
       })
       .then(function ReturnData(response) {
@@ -58,7 +57,7 @@
         url: 'https://hotelier-api-iron.herokuapp.com/api/Guests',
         method: 'get',
         headers: {
-          'Authorization': token()
+          'Authorization': LoginService.loginYesNo()
         }
       })
       .then(function returnGuests(response){

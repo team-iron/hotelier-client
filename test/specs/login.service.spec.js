@@ -18,7 +18,7 @@
         //$rootScope = _$rootScope_;
 
         $httpBackend.whenPOST('https://hotelier-api-iron.herokuapp.com/api/Staffs/login')
-        .respond({email: 'nick', password:'nick'});
+        .respond( {email: 'nick', password: 'nick'} );
 
         $httpBackend.whenGET('views/home.template.html')
         .respond('Got login template');
@@ -26,23 +26,23 @@
         }));
 
 
-        it('should login a user', function() {
+        it('should login a user', function(dc) {
             var result = LoginService.login('nick', 'nick');
             expect(result).to.be.an('object');
             expect(result.then).to.be.a('function');
             expect(result.catch).to.be.a('function');
-            console.log(result);
+            console.log(result.$$state.status);
 
-            // result
-            //     .then(function(data) {
-            //         console.log(data);
-            //         expect(data).to.be.an('object');
-            //         dc();
-            //     })
-            //     .catch(function(data) {
-            //         console.log(data);
-            //         dc('failed login test');
-            //     });
+            result
+                .then(function(data) {
+                    console.log('trying to extrapolate', data);
+                    expect(data).to.be.an('object');
+                    dc();
+                })
+                .catch(function(data) {
+                    console.log(data);
+                    dc('failed login test');
+                });
 
             $httpBackend.flush();
 
