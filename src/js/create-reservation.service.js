@@ -14,7 +14,6 @@
      */
     function CreateReservationService($http, LoginService) {
 
-        var token = LoginService.loginYesNo;
 
         return {
             createReservation: createReservation
@@ -41,7 +40,7 @@
                 },
                 method: 'post',
                 headers: {
-                    'Authorization': token()
+                    'Authorization': LoginService.loginYesNo()
                 }
                 })
                 .then(function returnResponse(response) {

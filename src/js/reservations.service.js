@@ -8,8 +8,6 @@
 
     function ReservationsService($http, LoginService) {
 
-        var token = LoginService.loginYesNo;
-
         return {
 
             getReservations: getReservations,
@@ -30,7 +28,7 @@
                     filter: {"order": "number ASC"}
                 },
                 headers: {
-                    'Authorization': token()
+                    'Authorization': LoginService.loginYesNo()
                 }
             })
             .then(function success(response) {
@@ -43,7 +41,7 @@
             return $http({
                 url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations/' + id,
                 headers: {
-                    'Authorization': token()
+                    'Authorization': LoginService.loginYesNo()
                 }
             })
             .then(function success(response) {
@@ -57,7 +55,7 @@
               url: 'https://hotelier-api-iron.herokuapp.com/api/Reservations/' + reservationId,
               method: 'delete',
               headers: {
-                  'Authorization': token()
+                  'Authorization': LoginService.loginYesNo()
               }
           });
         }
