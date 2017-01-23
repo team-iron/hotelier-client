@@ -1,0 +1,11 @@
+<ul id='guest-list'>
+
+  <li class='guest' ng-repeat='guest in guestlist.guests'>
+    <article class='guest-detail'>
+        <h4>{{guest.fullName}}</h4>
+        <p>{{guest.email}}</p>
+        <p>{{guest.phone}}</p>
+        <p>ID: {{guest.id}}</p>
+    </article>
+  </li>
+</ul>
