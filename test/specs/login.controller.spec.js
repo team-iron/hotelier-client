@@ -9,9 +9,9 @@
 
         beforeEach(module('hotelier'));
 
-        // beforeEach(module(function($provide) {
-        //     $provide.value('LoginService', mockLoginService);
-        // }));
+        beforeEach(module(function($provide) {
+            $provide.value('LoginService', mockLoginService);
+        }));
 
         beforeEach(inject(function($controller) {
 
